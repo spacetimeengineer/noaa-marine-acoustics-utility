@@ -1,0 +1,107 @@
+/* Style navigation tab set. */
+#tabSetStyle
+{
+        list-style-type:none;
+        margin:0;
+        padding:0;
+        position: fixed;
+        z-index:1;
+        left: 2%;
+        top: 4%;
+        background: lightblue;
+        right: 2%;
+        height: 8%;
+        border-top-left-radius:2em;
+        border-top-right-radius:2em;
+        border-bottom-right-radius:2em;
+        box-shadow:7px -7px 10px gray;
+        opacity: 0.97;
+}
+/* Style of individual navigation tabs. */
+#linkPosition
+{
+        margin-top: 1.45%; 
+        margin-left: 20%;
+        text-decoration: none;
+}
+
+.navigationLinks
+{
+        font-family: 'Franklin Gothic Medium', sans-serif;
+        font-size: 20px;
+        margin-right: 2%;
+        display:inline;
+        text-shadow: 0px 0px 9px black;
+        font-size: 1.6em;
+}
+
+#rigidSphereScatteringLink a
+{
+       position: fixed;
+       left: 34%;
+       color: lightskyblue;
+       text-decoration: none;
+       transition: color 0.35s;     
+}
+
+#rigidSphereScatteringLink a:hover
+{
+       color: white;
+}
+
+#fluidSphereScatteringLink a
+{
+       position: fixed;
+       left: 49%;
+       color: lightskyblue;        
+       text-decoration: none;
+       transition: color 0.35s;
+}
+
+#fluidSphereScatteringLink a:hover
+{
+       color: white;
+}
+
+#elasticSphereScatteringLink a
+{
+       position: fixed;
+       left: 64%;
+       color: lightskyblue;
+       text-decoration: none;
+       transition: color 0.35s;
+}
+
+#elasticSphereScatteringLink a:hover
+{
+       color: white;
+}
+
+#seaWaterPropertiesLink a
+{
+       position: fixed;
+       left: 80%;
+       color: lightskyblue;
+       text-decoration: none;
+       transition: color 0.35s;
+}
+
+#seaWaterPropertiesLink a:hover
+{
+       color: white;
+}
+
+#fishBodyReaderLink a
+{
+       position: fixed;
+       left: 21.9%;
+       color: lightskyblue;
+       text-decoration: none;
+       transition: color 0.35s;
+}
+
+#fishBodyReaderLink a:hover
+{
+       color: white;
+}
+

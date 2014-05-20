@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<!-- Write your comments here -->
+<html>
+        <!-- Write your comments here -->
+        <head>
+                <!-- Write your comments here -->
+                <script type="text/JavaScript" src="https://www.google.com/jsapi"></script>
+
+                <!-- Write your comments here -->
+                <link rel="stylesheet" href="Styles/FishBodyReader.css" TYPE="text/css" MEDIA="screen">
+                <!-- Write your comments here -->
+                <link rel="stylesheet" href="Styles/NavigationTabs.css" TYPE="text/css" MEDIA="screen">
+        <!-- Write your comments here -->
+        </head>
+        <!-- Write your comments here -->
+        <body>
+                <!-- Write your comments here -->
+                <div id="tabSetStyle">
+                <!-- Write your comments here -->
+                </div>
+                <!-- Write your comments here -->
+                <img id="noaaLogo" src="Graphics/NOAA.png" alt="some_text">
+                <!-- Write your comments here -->
+                <div id="noaaLogoShadow"></div>
+                <!-- Write your comments here -->
+                <!--<img id="fishLogo" src="fish.png" alt="some_text">-->
+                <div id="fishBodyReaderInputBlock"> 
+                        <!-- Write your comments here -->          
+                        <input type="text" class="input" id="digital_fish_length" placeholder="Digital Fish Length" name="Digital Fish Length" value="">
+                        <!-- Write your comments here -->
+                        <input type="text" class="input" id="scaled_fish_length" placeholder="Scaled Fish Length" name="Scaled Fish Length" value="">
+                        <!-- Write your comments here -->
+                        <input type="text" class="input" id="angle" name="Angle" placeholder="Scattering Angle (Degrees)" value="" >
+                        <!-- Write your comments here -->
+                        <input type="text" class="input" id="minimum_order" placeholder="Minimum Order" name="Minimum Order" value="">
+                        <!-- Write your comments here -->
+                        <input type="text" class="input" id="maximum_order" placeholder="Maximum Order" name="Maximum Order" value="">
+                        <!-- Write your comments here -->
+                        <input type="text" class="input" id="minimum_frequency" placeholder="Min Frequency (kHz)" name="Minimum Frequency (KHz)" value="" >
+                        <!-- Write your comments here -->
+                        <input type="text" class="input" id="maximum_frequency" placeholder="Max Frequency (kHz)" name="Maximum Frequency (KHz)" value="">
+                        <!-- Write your comments here -->
+                        <input type="text" class="input" id="frequency_increment_size" placeholder="Increment Frequency (kHz)" name="Frequency Increment Size (KHz)" value="" ><br>
+                        <!-- Write your comments here -->
+                        <input type="text" class="input" id="cwater" placeholder="Wave Velocity" name="cwater"  value="" >
+                        <!-- Write your comments here -->
+                        <input type="text" class="input" id="rhow" placeholder="Density of sea water" name="rhow  " value="" >
+                        <!-- Write your comments here -->
+                        <input type="text" class="input" id="csb" placeholder="Swim Bladder Sound Speed" name="csb   " value="" >
+                        <!-- Write your comments here -->
+                        <input type="text" class="input" id="rhosb" placeholder="Swim Bladder Density" name="rhosb " value="" >
+                        <!-- Write your comments here -->
+                        <input type="text" class="input" id="cfb" placeholder="Fish Body Sound Speed" name="cfb   " value="" >
+                        <!-- Write your comments here -->
+                        <input type="text" class="input" id="rhofb" placeholder="Fish Body Density" name="rhofb " value="">
+                        <!-- Write your comments here -->
+                        <img id="digitalFishLengthSymbol" src="Graphics/digitalFishLengthSymbol.png" alt="some_text">
+                        <!-- Write your comments here -->
+                        <img id="scaledFishLengthSymbol" src="Graphics/scaledFishLengthSymbol.png" alt="some_text">
+                        <!-- Write your comments here -->
+                        <img id="scatteringAngleSymbol" src="Graphics/scatteringAngleSymbol.png" alt="some_text">
+                        <!-- Write your comments here -->
+                        <img id="minOrderSymbol" src="Graphics/minOrderSymbol.png" alt="some_text">
+                        <!-- Write your comments here -->
+                        <img id="maxOrderSymbol" src="Graphics/maxOrderSymbol.png" alt="some_text">
+                        <!-- Write your comments here -->
+                        <img id="minFrequencySymbol" src="Graphics/minFrequencySymbol.png" alt="some_text">
+                        <!-- Write your comments here -->
+                        <img id="maxFrequencySymbol" src="Graphics/maxFrequencySymbol.png" alt="some_text">
+                        <!-- Write your comments here -->
+                        <img id="frequencyIncrementSymbol" src="Graphics/frequencyIncrementSymbol.png" alt="some_text">
+                        <!-- Write your comments here -->
+                        <img id="cWaterSymbol" src="Graphics/cWaterSymbol.png" alt="some_text">
+                        <!-- Write your comments here -->
+                        <img id="rhoWaterSymbol" src="Graphics/rhoWaterSymbol.png" alt="some_text">
+                        <!-- Write your comments here -->
+                        <img id="cSwimBladderSymbol" src="Graphics/cSwimBladderSymbol.png" alt="some_text">
+                        <!-- Write your comments here -->
+                        <img id="rhoSwimBladderSymbol" src="Graphics/rhoSwimBladderSymbol.png" alt="some_text">
+                        <!-- Write your comments here -->
+                        <img id="cFishBodySymbol" src="Graphics/cFishBodySymbol.png" alt="some_text">
+                        <!-- Write your comments here -->
+                        <img id="rhoFishBodySymbol" src="Graphics/rhoFishBodySymbol.png" alt="some_text">
+                        <!-- Write your comments here -->
+                        <div id="fileChooser">
+                                <!-- Write your comments here -->
+                                File Selection
+                                <!-- Write your comments here -->
+                                <input type="file" id="file_input">
+                                <!-- Write your comments here -->    
+                                <script type="text/javascript" src="Functions/FishBodyReader.js"></script>
+                                <!-- Write your comments here -->    
+                                <script type="text/javascript" src="Functions/FluidSphere.js"></script>
+                                <!-- Write your comments here -->
+                                <script type="text/JavaScript">document.getElementById('file_input').addEventListener('change', readSingleFile, false);</script>
+                        <!-- Write your comments here -->
+                        </div>
+                        <!-- Write your comments here -->
+                        <div id="downloadCSVFile">
+                            <!-- Write your comments here -->
+                            <a href="javascript:onDownload();">Download CSV File</a>   
+                        <!-- Write your comments here -->
+                        </div>
+                <!-- Write your comments here -->        
+                </div>    
+                <!-- Write your comments here -->
+                <div id ="fishBodyReaderChartBlock">    
+                        <!--Chart Widgets.-->
+                        <div id="chartSetSpacer" class="chartClass"></div>
+                        <!-- Write your comments here -->
+                        <div id="lateral_chart" class="chartClass"></div>
+                        <!-- Write your comments here -->
+                        <div id="dorsal_chart" class="chartClass"></div>
+                        <!-- Write your comments here -->
+                        <div id="scattering_chart" class="chartClass"></div>
+                        <!--Fish-body meta data widgets.-->
+                        <div id="uf_chart" class="chartClass"></div>
+                        <!-- Write your comments here -->
+                        <div id="vmf_chart" class="chartClass"></div>
+                        <!-- Write your comments here -->
+                        <div id="vuf_chart" class="chartClass"></div>
+                        <!-- Write your comments here -->
+                        <div id="vlf_chart" class="chartClass"></div>
+                        <!-- Write your comments here -->
+                        <div id="maf_chart" class="chartClass"></div>
+                        <!-- Write your comments here -->
+                        <div id="duf_chart" class="chartClass"></div>
+                        <!-- Write your comments here -->
+                        <div id="blf_chart" class="chartClass"></div>
+                        <!--Swim-bladder meta data widgets.-->
+                        <div id="dxs_chart" class="chartClass"></div>
+                        <!-- Write your comments here -->
+                        <div id="dv_chart" class="chartClass"></div>
+                        <!-- Write your comments here -->
+                        <div id="u_chart" class="chartClass"></div>
+                        <!-- Write your comments here -->
+                        <div id="vm_chart" class="chartClass"></div>
+                        <!-- Write your comments here -->
+                        <div id="vu_chart" class="chartClass"></div>
+                        <!-- Write your comments here -->
+                        <div id="ma_chart" class="chartClass"></div>
+                        <!-- Write your comments here -->
+                        <div id="du_chart" class="chartClass"></div>
+                <!-- Write your comments here -->
+                </div> 
+            <!-- Write your comments here -->    
+            <select id="toolSelector" onclick="selectAcousticsToolOnClick();">
+                <!-- Write your comments here -->
+                <option value="chooseScatteringTool.">Choose Scattering Tool..</option>
+                <!-- Write your comments here -->
+                <option value="sphereScattering">Fluid Sphere Solution Grapher</option>
+                <!-- Write your comments here -->
+                <option value="fishBodyScattering">Kirchoff Ray Mode Solution Grapher</option>
+            <!-- Write your comments here -->
+            </select>     
+        <!-- Write your comments here -->      
+        </body>
+<!-- Write your comments here -->
+</html>

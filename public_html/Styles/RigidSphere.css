@@ -1,0 +1,81 @@
+#AcousticScatteringFromARigidSphereInputBlock
+{ 
+        display: block;
+        position: fixed;
+        top: 12%;
+        bottom: 3%;
+        left: 2%;
+        width: 20%;
+        font-family: sans-serif;
+        background: linear-gradient(lightblue, blue); /* Standard syntax */
+        transition: color 1.5s;
+        transition: background 1.5s;
+        border-bottom-right-radius:2em;
+        border-bottom-left-radius:2em;
+        box-shadow:7px 0px 20px gray;
+}
+
+#noaaLogo
+{
+        position: fixed;
+        z-index: 2;
+        top: 8%;
+        left: 8.2%;
+        width: 8%;
+}
+
+#noaaLogoShadow
+{ 
+   position: fixed;
+   z-index: 1;
+   top: 8%;
+   left: 8.21%;
+   width: 8%;
+   height: 16%;
+   background: white; 
+   box-shadow: 7px -3px 15px black;
+   border-radius: 100%;
+}
+
+
+.input:hover
+{
+        background: grey;
+        color: white;
+        box-shadow:0px 0px 100px lightblue;
+}
+
+.input
+{
+        position: absolute;
+        left: 15%;
+        width: 71%;
+        height: 3%;
+        font-size: 1.5em;
+        transition: color 0.35s;
+        transition: background 0.35s;
+        box-shadow:0px 0px 10px black;
+}
+
+#temperature
+{
+      position: absolute;
+      top:  20%;
+      border-radius: 0.4em;
+      
+}
+
+#salinity
+{
+      position: absolute;
+      border-radius: 0.4em;
+      top:  24%;
+}
+
+#depth
+{
+      position: absolute;
+      border-radius: 0.4em;
+      top:  28%;  
+}
+

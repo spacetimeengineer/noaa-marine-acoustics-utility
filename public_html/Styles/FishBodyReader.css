@@ -1,0 +1,662 @@
+#templateElementIDStyle
+{
+    /*Size & Position*/
+    
+    /*Colors & Effects*/
+    
+    /*Font*/    
+}
+
+.templateClassStyle
+{
+    /*Size & Position*/
+    
+    /*Colors & Effects*/
+    
+    /*Font*/    
+}
+
+
+/* 
+ * Description:
+ *
+ * Status:
+ */
+#fishBodyReaderInputBlock 
+{ 
+    /*Size & Position*/
+    display: block;
+    position: fixed;
+    top: 12%;
+    bottom: 3%;
+    left: 2%;
+    width: 20%;
+    /*Colors & Effects*/
+    background: linear-gradient(lightblue, blue); /* Standard syntax */
+    transition: color 1.5s;
+    transition: background 1.5s;
+    border-bottom-right-radius:2em;
+    border-bottom-left-radius:2em;
+    box-shadow:7px 0px 20px gray;
+    opacity: 0.97;
+    /*Font*/
+    font-family: sans-serif;
+}
+
+/* 
+ * Description:
+ *
+ * Status:
+ */
+#fishBodyReaderChartBlock
+{
+    /*Size & Position*/
+    position: absolute;
+    left: 18%;
+    right: 2%;
+    top: 4%;
+    height: 200%;    
+}
+
+/* 
+ * Description:
+ *
+ * Status:
+ */
+#noaaLogo
+{
+    /*Size & Position*/
+    position: fixed;
+    z-index: 2;
+    top: 8%;
+    left: 8.2%;
+    width: 8%;
+    height: 16%;
+}
+
+/* 
+ * Description:
+ *
+ * Status:
+ */
+#noaaLogoShadow
+{ 
+    /*Size & Position*/
+   position: fixed;
+   z-index: 1;
+   top: 8%;
+   left: 8.21%;
+   width: 8%;
+   height: 16%;
+    /*Colors & Effects*/
+   background: white; 
+   box-shadow: 7px -3px 15px black;
+   border-radius: 100%;
+}
+
+/* 
+ * Description:
+ *
+ * Status:
+ */
+#topWhiteBorder
+{
+    /*Size & Position*/
+    display: block;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    top: 0%;
+    height: 4%;
+    /*Colors & Effects*/
+    background: white;
+}
+
+/* 
+ * Description:
+ *
+ * Status:
+ */
+.input:hover
+{
+    /*Colors & Effects*/
+    background: grey;
+    color: white;
+    box-shadow:0px 0px 100px lightblue;
+}
+
+/* 
+ * Description:
+ *
+ * Status:
+ */
+.input
+{
+    /*Size & Position*/
+    position: absolute;
+    left: 15%;
+    width: 71%;
+    height: 3%;
+    /*Colors & Effects*/
+    transition: color 0.35s;
+    transition: background 0.35s;
+    box-shadow:0px 0px 10px black;
+    /*Font*/
+    font-size: 1.5em;
+}
+
+/* 
+ * Description:
+ *
+ * Status:
+ */
+#digital_fish_length
+{
+    /*Size & Position*/
+    position: absolute;
+    top:  20%;
+    /*Colors & Effects*/
+    border-radius: 0.4em; 
+}
+
+/* 
+ * Description:
+ *
+ * Status:
+ */
+#scaled_fish_length
+{
+    /*Size & Position*/
+    position: absolute;
+    top:  24%;
+    /*Colors & Effects*/
+    border-radius: 0.4em;
+}
+
+/* 
+ * Description:
+ *
+ * Status:
+ */
+#angle
+{
+    /*Size & Position*/
+    position: absolute;
+    top:  28%;  
+    /*Colors & Effects*/
+    border-radius: 0.4em;
+}
+
+/* 
+ * Description:
+ *
+ * Status:
+ */
+#minimum_order
+{
+    /*Size & Position*/
+    position: absolute;
+    top:  32%; 
+    /*Colors & Effects*/
+    border-radius: 0.4em;
+}
+
+/* 
+ * Description:
+ *
+ * Status:
+ */
+#maximum_order
+{
+    /*Size & Position*/
+    position: absolute;
+    top:  36%;
+    /*Colors & Effects*/
+    border-radius: 0.4em;
+}
+
+/* 
+ * Description:
+ *
+ * Status:
+ */
+#minimum_frequency
+{
+    /*Size & Position*/
+    position: absolute;
+    top:  40%;
+    /*Colors & Effects*/
+    border-radius: 0.4em;
+}
+
+/* 
+ * Description:
+ *
+ * Status:
+ */
+#maximum_frequency
+{
+    /*Size & Position*/
+    position: absolute;
+    top:  44%;
+    /*Colors & Effects*/
+    border-radius: 0.4em;
+}
+
+/* 
+ * Description:
+ *
+ * Status:
+ */
+#frequency_increment_size
+{
+    /*Size & Position*/
+    position: absolute;
+    top:  48%;
+    /*Colors & Effects*/
+    border-radius: 0.4em; 
+}
+
+/* 
+ * Description:
+ *
+ * Status:
+ */
+#cwater
+{
+    /*Size & Position*/
+    position: absolute;
+    top:  52%;
+    /*Colors & Effects*/   
+    border-radius: 0.4em;
+}
+
+/* 
+ * Description:
+ *
+ * Status:
+ */
+#rhow
+{
+    /*Size & Position*/
+    position: absolute;
+    top:  56%;
+    /*Colors & Effects*/
+    border-radius: 0.4em;
+}
+
+/* 
+ * Description:
+ *
+ * Status:
+ */
+#csb
+{
+    /*Size & Position*/
+    position: absolute;
+    top:  60%;
+    /*Colors & Effects*/
+    border-radius: 0.4em;
+}
+
+/* 
+ * Description:
+ *
+ * Status:
+ */
+#rhosb
+{
+    /*Size & Position*/
+    position: absolute;
+    top:  64%;
+    /*Colors & Effects*/
+    border-radius: 0.4em;
+}
+
+/* 
+ * Description:
+ *
+ * Status:
+ */
+#cfb
+{
+    /*Size & Position*/
+    position: absolute;
+    top:  68%;
+    /*Colors & Effects*/
+    border-radius: 0.4em;
+}
+
+/* 
+ * Description:
+ *
+ * Status:
+ */
+#rhofb
+{
+    /*Size & Position*/
+    position: absolute;
+    top:  72%;
+    /*Colors & Effects*/
+    border-radius: 0.4em;
+}
+
+/* 
+ * Description:
+ *
+ * Status:
+ */
+#fileChooser:hover
+{
+    /*Colors & Effects*/
+    background:white;
+    box-shadow:0px 0px 80px gray;
+}
+
+/* 
+ * Description:
+ *
+ * Status:
+ */
+#fileChooser
+{
+    /*Size & Position*/
+    position: fixed;
+    top: 79.5%;
+    left: 5%;
+    width: 14.3%;
+    height: 5%;
+    /*Colors & Effects*/
+    transition-duration: 0.5s;
+    border-radius: 0.5em;
+}
+
+/* 
+ * Description:
+ *
+ * Status:
+ */
+#downloadCSVFile
+{
+    /*Size & Position*/
+    position: fixed;
+    color: white;
+    top: 85%;
+    left: 5%;
+    width: 14.3%;   
+    /*Colors & Effects*/
+    transition-duration: 0.5s;
+    border-radius: 0.5em;
+    height: 2.5%;
+                
+}
+
+/* 
+ * Description:
+ *
+ * Status:
+ */
+#downloadCSVFile:hover
+{
+    /*Colors & Effects*/
+    background:white;
+    background:white;
+    box-shadow:0px 0px 100px gray;
+}
+
+/* 
+ * Description:
+ *
+ * Status:
+ */
+#chartSetSpacer
+{
+    /*Size & Position*/
+    display: block;
+    height: 70px;
+}
+
+/* 
+ * Description:
+ *
+ * Status:
+ */
+.chartClass
+{
+    /*Size & Position*/
+    position: relative;
+    height: 30%;
+    width: 90%;
+    left: 7%;
+}
+
+/* 
+ * Description:
+ *
+ * Status:
+ */
+#digitalFishLengthSymbol
+{
+    /*Size & Position*/
+    position: absolute;
+    left: 4%;
+    top: 20%;
+    height: 25px;       
+}
+
+/* 
+ * Description:
+ *
+ * Status:
+ */
+#scaledFishLengthSymbol
+{
+    /*Size & Position*/
+    position: absolute;
+    left: 4%;
+    top: 24%;
+    height: 25px;        
+}
+
+/* 
+ * Description:
+ *
+ * Status:
+ */
+#scatteringAngleSymbol
+{
+    /*Size & Position*/
+    position: absolute;
+    left: 4%;
+    top: 28%;
+    height: 25px;    
+}
+
+/* 
+ * Description:
+ *
+ * Status:
+ */
+#minOrderSymbol
+{
+    /*Size & Position*/
+    position: absolute;
+    left: 4%;
+    top: 32%;
+    height: 25px;        
+}
+
+/* 
+ * Description:
+ *
+ * Status:
+ */
+#maxOrderSymbol
+{
+    /*Size & Position*/
+    position: absolute;
+    left: 4%;
+    top: 36%;
+    height: 25px;           
+}
+
+/* 
+ * Description:
+ *
+ * Status:
+ */
+#minFrequencySymbol
+{
+    /*Size & Position*/
+    position: absolute;
+    left: 4%;
+    top: 40%;
+    height: 25px;        
+}
+
+/* 
+ * Description:
+ *
+ * Status:
+ */
+#maxFrequencySymbol
+{
+    /*Size & Position*/
+    position: absolute;
+    left: 4%;
+    top: 44%;
+    height: 25px;        
+}
+
+/* 
+ * Description:
+ *
+ * Status:
+ */
+#frequencyIncrementSymbol
+{
+    /*Size & Position*/
+    position: absolute;
+    left: 4%;
+    top: 48%;
+    height: 25px;        
+}
+
+/* 
+ * Description:
+ *
+ * Status:
+ */
+#cWaterSymbol
+{
+    /*Size & Position*/
+    position: absolute;
+    left: 4%;
+    top: 52%;
+    height: 25px;   
+}
+
+/* 
+ * Description:
+ *
+ * Status:
+ */
+#rhoWaterSymbol
+{
+    /*Size & Position*/
+    position: absolute;
+    left: 4%;
+    top: 56%;
+    height: 25px;        
+}
+
+/* 
+ * Description:
+ *
+ * Status:
+ */
+#cSwimBladderSymbol
+{
+    /*Size & Position*/
+    position: absolute;
+    left: 4%;
+    top: 60%;
+    height: 25px;        
+}
+
+/* 
+ * Description:
+ *
+ * Status:
+ */
+#rhoSwimBladderSymbol
+{
+    /*Size & Position*/
+    position: absolute;
+    left: 4%;
+    top: 64%;
+    height: 25px;        
+}
+
+/* 
+ * Description:
+ *
+ * Status:
+ */
+#cFishBodySymbol
+{
+    /*Size & Position*/
+    position: absolute;
+    left: 4%;
+    top: 68%;
+    height: 25px;  
+}
+
+/* 
+ * Description:
+ *
+ * Status:
+ */
+#rhoFishBodySymbol
+{
+    /*Size & Position*/
+    position: absolute;
+    left: 4%;
+    top: 72%;
+    height: 25px; 
+}
+
+/* 
+ * Description:
+ *
+ * Status:
+ */
+#toolSelectorLabel
+{
+    /*Size & Position*/
+    position: fixed;
+    width: 10%;
+    height: 4%;
+    top: 7%;
+    right: 12%;
+    z-index: 2
+}
+
+/* 
+ * Description:
+ *
+ * Status:
+ */
+#toolSelector
+{
+    /*Size & Position*/
+    position: fixed;
+    width: 10%;
+    height: 4%;
+    top: 6%;
+    right: 5%;
+    z-index: 2
+}
+
+
+
