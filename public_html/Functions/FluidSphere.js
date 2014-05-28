@@ -38,7 +38,7 @@ var systemLogOutput = new Array();
 
 //Initialize the values needed for gui setup.
 init();
-
+setFactorsOnclick();
 /*
  * Program End
  */
@@ -266,37 +266,34 @@ function getCSubM(m, acousticFrequency, waterWaveVelocity, sphereWaveVelocity, s
         //
         var h = sphereWaveVelocity/waterWaveVelocity;
         //
-        var k = 2*Math.PI*acousticFrequency/sphereWaveVelocity;
+        var kPrime = 2*Math.PI*acousticFrequency/sphereWaveVelocity;
         //
-        var kPrime = 2*Math.PI*acousticFrequency/waterWaveVelocity;        
+        var k = 2*Math.PI*acousticFrequency/waterWaveVelocity;        
         //
         var a = sphereRadius;
         //
-        var C=((getCoefficientAlpha(m,kPrime*a)/getCoefficientAlpha(m,k*a))*(getSphericalBesselFunctionY(m,k*a)/getSphericalBesselFunctionJ(m,kPrime*a))-(getCoefficientBeta(m,k*a)/getCoefficientAlpha(m,k*a))*g*h)/((getCoefficientAlpha(m,kPrime*a)/getCoefficientAlpha(m,k*a))*(getSphericalBesselFunctionJ(m,k*a)/getSphericalBesselFunctionJ(m,kPrime*a))-g*h);
+        var C=  (
+                    (getCoefficientAlpha(m,kPrime*a)/getCoefficientAlpha(m,k*a))*
+                
+                    (getSphericalBesselFunctionY(m,k*a)/getSphericalBesselFunctionJ(m,kPrime*a))-
+                
+                    (getCoefficientBeta(m,k*a)/getCoefficientAlpha(m,k*a))
+                    
+                    *g*h
+                )/
+                
+                (
+                    (getCoefficientAlpha(m,kPrime*a)/getCoefficientAlpha(m,k*a))*
+                    
+                    (getSphericalBesselFunctionJ(m,k*a)/getSphericalBesselFunctionJ(m,kPrime*a))-
+                    
+                    g*h
+                );
         //    
-        systemLogOutput.push([m,parseFloat(C)]);
+        systemLogOutput.push([m,parseFloat(C),getCoefficientAlpha(m,k*a), getCoefficientAlpha(m,kPrime*a), getCoefficientBeta(m,k*a)]);
         //
         return C;
         
-}
-
-/*
- * Description:
- * Generates the scientific document specified value A(m). This return value is complex. 
- * Example:
- * getCoefficientA(m);
- * returns 
- * Status:
- * Function is not stable.
- */
-function getCoefficientA(m)
-{
-        //
-        var A;
-        //A = getComplexProduct(getExponentiatedComplexNumber(getComplexNumber(0,-1),m),getComplexDivision(getComplexNumber(2*m+1,0),getComplexNumber(1,getCoefficientC(m,,))));
-        A = getComplexProduct(getComplexNumber(-1*waveAmplitude,0),A);
-        //
-        return A;
 }
 
 /*
@@ -809,5 +806,84 @@ function selectAcousticsToolOnClick()
     {
 
     }
+}
+
+/*
+ * Description: 
+ * 
+ * Example:
+ * 
+ * Status:
+ * Function is not stable.
+ */
+function downloadSolutionOnClick()
+{
+    //
+    var lowerBound = parseFloat(document.getElementById('lowerBoundInput').value);
+    //
+    var upperBound = parseFloat(document.getElementById('upperBoundInput').value);
+    //
+    var increment = parseFloat(document.getElementById('incrementInput').value);
+    //
+    var waterWaveVelocity = (document.getElementById('waterWaveVelocity').value); 
+    //
+    var sphereWaveVelocity = (document.getElementById('sphereWaveVelocity').value);
+    //
+    var waterDensity = (document.getElementById('waterDensity').value);
+    //
+    var sphereDensity = (document.getElementById('sphereDensity').value);
+    //
+    var  sphereRadius = (document.getElementById('sphereRadius').value);
+    //
+    var waterTemperature = (document.getElementById('temperature').value);
+    //
+    var waterSalinity = (document.getElementById('salinity').value);
+    //
+    var waterDepth = (document.getElementById('depth').value);
+    //
+    var gFactor = (document.getElementById('gFactor').value);
+    //
+    var hFactor = (document.getElementById('hFactor').value);
+    //
+    document.location = 'data:Application/octet-stream,' +encodeURIComponent(writeSolutionFile(lowerBound, upperBound, increment, waterWaveVelocity, sphereWaveVelocity, sphereDensity, waterDensity, sphereRadius, waterTemperature, waterSalinity, waterDepth, gFactor, hFactor));
+}
+
+/*
+ * Description: 
+ * 
+ * Example:
+ * 
+ * Status:
+ * Function is not stable.
+ */
+function writeSolutionFile(lowerBound, upperBound, increment, waterWaveVelocity, sphereWaveVelocity, sphereDensity, waterDensity, sphereRadius, waterTemperature, waterSalinity, waterDepth, gFactor, hFactor)
+{
+    //This makes up the contents of the entire file.
+    var solutionFile =
+    "Generated from the Fluid Sphere Back-Scattering Grapher:"+"\r\n"+"\r\n"+
+    "Water Temperature: "+waterTemperature+"\r\n"+
+    "Water Salinity: "+waterSalinity+"\r\n"+
+    "Water Depth: "+waterDepth+"\r\n"+
+    "Water Density: "+waterDensity+"\r\n"+
+    "Water Sound Velocity: "+waterWaveVelocity+"\r\n"+
+    "Sphere Radius: "+sphereRadius+"\r\n"+
+    "Sphere Density: "+sphereDensity+"\r\n"+
+    "Sphere Sound Velocity: "+sphereWaveVelocity+"\r\n"+
+    "g Factor: "+gFactor+"\r\n"+
+    "h Factor: "+hFactor+"\r\n"+
+    "Lower Frequency Bound: "+lowerBound+"\r\n"+
+    "Upper Frequency Bound: "+upperBound+"\r\n"+
+    "Frequency Increment Size: "+increment+"\r\n"+"\r\n";
+    
+    //This is the data which describes the curve but not the parameters.
+    var solutionData = getFluidSphereSolution(lowerBound, upperBound, increment, waterWaveVelocity, sphereWaveVelocity, sphereDensity, waterDensity, sphereRadius);
+    //Run through each element in the solution data to build up the file in a organized format.
+    for (var i=0; i<solutionData.length; i++)
+    {
+        //Appends new data in the text file.
+        solutionFile=solutionFile+solutionData[i]+"\r\n";
+    }
+    //Returns the text file string.
+    return solutionFile;
 }
 
