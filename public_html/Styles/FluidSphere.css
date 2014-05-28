@@ -336,6 +336,7 @@
     height: 5%;
     top: 90%;
     left: 33%;
+    font-size: 1.5em;
 }
 
 #systemLogLabel
@@ -348,15 +349,15 @@
     left: 33%;
 }
 
-#toolSelectorLabel
+#title
 {
     /*Size & Position*/
     position: fixed;
-    width: 10%;
-    height: 4%;
-    top: 7%;
-    right: 12%;
-    z-index: 2
+    top: 6%;
+    left: 22%;
+    z-index: 2;
+    /*Font*/
+    font-size: 2em;
 }
 
 #toolSelector
@@ -364,10 +365,49 @@
     
     /*Size & Position*/
     position: fixed;
-    width: 10%;
+    width: 12%;
     height: 4%;
     top: 6%;
     right: 5%;
     z-index: 2
 }
 
+#gFactor
+{
+    /*Size & Position*/
+    position: fixed;
+    width: 4%;
+    height: 3%;
+    top: 92%;
+    left: 8%; 
+}
+
+#hFactor
+{
+    /*Size & Position*/
+    position: fixed;
+    width: 4%;
+    height: 3%;
+    top: 92%;
+    left: 15.4%; 
+}
+
+#gFactorLabel
+{
+    /*Size & Position*/
+    position: fixed;
+    width: 4%;
+    height: 3%;
+    top: 93%;
+    left: 5%; 
+}
+
+#hFactorLabel
+{
+    /*Size & Position*/
+    position: fixed;
+    width: 4%;
+    height: 3%;
+    top: 93%;
+    left: 12.6%; 
+}

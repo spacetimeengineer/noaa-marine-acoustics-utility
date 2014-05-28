@@ -1,32 +1,124 @@
 <!DOCTYPE html>
+<!-- Write your comments here -->
 <html>
-        <head>
-                <title></title>
-                <script type="text/JavaScript" src="https://www.google.com/jsapi"></script>
-                <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-                <link rel="stylesheet" href="NavigationTabs.css" TYPE="text/css" MEDIA="screen">
-                <link rel="stylesheet" href="AcousticScatteringFromARigidSphere.css" TYPE="text/css" MEDIA="screen">
-        </head>
-        <body>
-                <div id="tabSetStyle">
-                        <div id="linkPosition">
-                                <div id="fishBodyReaderLink" class="navigationLinks"><a href="FishBodyReader.html">FISH BODY READER</a></div>
-                                <div id="fluidSphereScatteringLink" class="navigationLinks"><a href="FluidSphere.html">FLUID SPHERE SCATTERING</a></div>
-                                <div id="elasticSphereScatteringLink" class="navigationLinks"><a href="ElasticSphere.html">ELASTIC SPHERE SCATTERING</a></div>
-                                <div id="rigidSphereScatteringLink" class="navigationLinks"><a href="RigidSphere.html">RIGID SPHERE SCATTERING</a></div>
-                                <div id="seaWaterPropertiesLink" class="navigationLinks"><a href="CalculateSeaWaterProperties.html">SEA WATER PROPERTIES</a></div>
-                        </div>
-                </div>
-                <img id="noaaLogo" src="NOAA.png" alt="some_text">
-                <div id="noaaLogoShadow"></div>
-                <div id="AcousticScatteringFromARigidSphereInputBlock"> 
-                        <br>
-                        <br>
-                        <input type="text" class="input" id="temperature" placeholder="Temperature (°C)" name="Scaled Fish Length"><br>
-                        <input type="text" class="input" id="salinity" placeholder="Salinity (ppt)" name="Digital Fish Length"><br>
-                        <input type="text" class="input" id="depth" placeholder="Sea Water Depth (m)" name="Scaled Fish Length"><br>
-                        <br>
-                        <br>
-                </div> 
-        </body>
+    <!-- Write your comments here -->
+    <head>
+        <!-- Write your comments here -->
+        <title></title>
+        <!-- Write your comments here -->
+        <script type="text/JavaScript" src="https://www.google.com/jsapi"></script>
+        <!-- Write your comments here -->
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <!-- Write your comments here -->
+        <link rel="stylesheet" href="Styles/NavigationTabs.css" TYPE="text/css" MEDIA="screen">
+        <!-- Write your comments here -->
+        <link rel="stylesheet" href="Styles/RigidSphere.css" TYPE="text/css" MEDIA="screen">
+        <!-- Write your comments here -->
+    </head>
+    <!-- Write your comments here -->
+    <body>
+        <!-- Write your comments here -->
+        <div id="tabSetStyle">
+        <!-- Write your comments here -->    
+        </div>
+        <!-- Write your comments here -->
+        <img id="noaaLogo" src="Graphics/NOAA.png" alt="some_text">
+        <!-- Write your comments here -->
+        <div id="noaaLogoShadow"></div>
+        <!-- Write your comments here -->
+        <div id="AcousticScatteringFromARigidSphereInputBlock">
+            <!-- Write your comments here -->
+            <input type="text" class="input" id="temperature" placeholder="Temperature (°C)" ><br>
+            <!-- Write your comments here -->
+            <input type="text" class="input" id="salinity" placeholder="Salinity (ppt)" ><br>
+            <!-- Write your comments here -->
+            <input type="text" class="input" id="depth" placeholder="Sea Water Depth (m)" ><br>
+            <!-- Write your comments here -->
+            <button type="button" id="calculateSeaWaterPropertiesButton" onclick="calculateSeaWaterPropertiesOnClick();">Calculate Sea Water Properties</button>
+            <div id="waterDensityLabel">Sea Water Density (kg/m^3)</div>
+            <!-- Write your comments here -->
+            <input type="text" class="input" id="waterDensity">
+            <!-- Write your comments here -->
+            <div id="waterWaveVelocityLabel">Sea Water Sound Wave Velocity (m/s)</div>
+            <!-- Write your comments here -->
+            <input type="text" class="input" id="waterWaveVelocity" >
+            <!-- Write your comments here -->
+            <div id="sphereCompositionLabel">Sphere Material</div>
+            <!-- Write your comments here -->
+            <select id="sphereCompositionSelector" onclick="calculateSpherePropertiesOnClick();">
+                <!-- Write your comments here -->
+                <option value="chooseMaterial">Choose Material</option>
+                <!-- Write your comments here -->
+                <option value="tungstenCarbite">Tungsten Carbite</option>
+                <!-- Write your comments here -->
+                <option value="copper">Copper</option>
+                <!-- Write your comments here -->
+                <option value="aluminium">Aluminium</option>
+                <!-- Write your comments here -->
+                <option value="stainlessSteel">Stainless Steel</option>
+                <!-- Write your comments here -->
+                <option value="userInput">User Input Custom Properties</option>
+            <!-- Write your comments here -->
+            </select>
+            <!-- Write your comments here -->
+            <div id="sphereDensityLabel">Sphere Density (kg/m^3)</div>
+            <!-- Write your comments here -->
+            <input type="text" class="input" id="sphereDensity">
+            <!-- Write your comments here -->
+            <div id="sphereWaveVelocityLabel">Sphere Sound Wave Velocity (m/s)</div>
+            <!-- Write your comments here -->
+            <input type="text" class="input" id="sphereWaveVelocity" >
+            <!-- Write your comments here -->
+            <div id="sphereRadiusLabel">Sphere Radius (mm)</div>
+            <!-- Write your comments here -->
+            <input type="text" class="input" id="sphereRadius" >
+        <!-- Write your comments here -->
+        </div> 
+        <!-- Write your comments here -->
+        <script type="text/JavaScript" src="Functions/FluidSphere.js"></script>
+        <!-- Write your comments here -->
+        <script type="text/javascript" src="Functions/FishBodyReader.js"></script>
+        <!-- Write your comments here -->    
+        <script type="text/javascript" src="Functions/RigidSphere.js"></script>
+        <!-- Write your comments here -->
+        <div id="acousticScatteringForARigidSphereChartBlock">
+            <!-- Write your comments here -->
+            <div id="acousticScatteringForARigidSphereChart"></div>
+            <!-- Write your comments here -->
+            <div id="upperBoundLabel">Upper Bound(kHz)</div>
+            <!-- Write your comments here -->
+            <input type="text" class="input" id="upperBoundInput">
+            <!-- Write your comments here -->
+            <div id="lowerBoundLabel">Lower Bound(kHz)</div>
+            <!-- Write your comments here -->
+            <input type="text" class="input" id="lowerBoundInput">
+            <!-- Write your comments here -->
+            <div id="incrementLabel">Increment (kHz)</div>
+            <!-- Write your comments here -->
+            <input type="text" class="input" id="incrementInput">
+            <!-- Write your comments here -->
+            <button type="button" id="plotSolutionButton" onclick="plotSolutionOnClick();">Plot Solution</button>
+            <!-- Write your comments here -->
+            <div id="systemLogLabel">Function Testing Output Log</div>
+            <!-- Write your comments here -->
+            <input id="systemLog">
+            <!-- Write your comments here -->
+        </div>
+        <!-- Write your comments here -->
+        <div id="title">Rigid Sphere Back-Scattering Grapher</div>
+        <!-- Write your comments here -->
+        <select id="toolSelector" onclick="selectAcousticsToolOnClick();">
+            <!-- Write your comments here -->
+            <option value="chooseScatteringTool.">Choose Scattering Tool</option>
+            <!-- Write your comments here -->
+            <option value="fluidSphereScattering">Fluid Sphere</option>
+            <!-- Write your comments here -->
+            <option value="fishBodyScattering">Kirchoff Ray Mode</option>
+            <!-- Write your comments here -->
+            <option value="rigidSphereScattering">Rigid Sphere</option>
+        <!-- Write your comments here -->    
+        </select>
+    <!-- Write your comments here -->    
+    </body>
+<!-- Write your comments here -->    
 </html>

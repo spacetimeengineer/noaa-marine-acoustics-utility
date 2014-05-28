@@ -1,81 +1,373 @@
+#templateElementIDStyle
+{
+    /*Size & Position*/
+    
+    /*Colors & Effects*/
+    
+    /*Font*/    
+}
+
+.templateClassStyle
+{
+    /*Size & Position*/
+    
+    /*Colors & Effects*/
+    
+    /*Font*/    
+}
+
 #AcousticScatteringFromARigidSphereInputBlock
 { 
-        display: block;
-        position: fixed;
-        top: 12%;
-        bottom: 3%;
-        left: 2%;
-        width: 20%;
-        font-family: sans-serif;
-        background: linear-gradient(lightblue, blue); /* Standard syntax */
-        transition: color 1.5s;
-        transition: background 1.5s;
-        border-bottom-right-radius:2em;
-        border-bottom-left-radius:2em;
-        box-shadow:7px 0px 20px gray;
+    /*Size & Position*/
+    display: block;
+    position: fixed;
+    top: 12%;
+    bottom: 3%;
+    left: 2%;
+    width: 20%;
+    /*Colors & Effects*/
+    background: linear-gradient(lightblue, blue); /* Standard syntax */
+    transition: color 1.5s;
+    transition: background 1.5s;
+    border-bottom-right-radius:2em;
+    border-bottom-left-radius:2em;
+    box-shadow:7px 0px 20px gray;
+    /*Font*/
+    font-family: sans-serif;
 }
-
-#noaaLogo
-{
-        position: fixed;
-        z-index: 2;
-        top: 8%;
-        left: 8.2%;
-        width: 8%;
-}
-
-#noaaLogoShadow
-{ 
-   position: fixed;
-   z-index: 1;
-   top: 8%;
-   left: 8.21%;
-   width: 8%;
-   height: 16%;
-   background: white; 
-   box-shadow: 7px -3px 15px black;
-   border-radius: 100%;
-}
-
 
 .input:hover
 {
-        background: grey;
-        color: white;
-        box-shadow:0px 0px 100px lightblue;
+    /*Colors & Effects*/
+    background: grey;
+    color: white;
+    box-shadow:0px 0px 100px lightblue;
 }
 
 .input
 {
-        position: absolute;
-        left: 15%;
-        width: 71%;
-        height: 3%;
-        font-size: 1.5em;
-        transition: color 0.35s;
-        transition: background 0.35s;
-        box-shadow:0px 0px 10px black;
+    /*Size & Position*/
+    position: absolute;
+    left: 15%;
+    width: 71%;
+    height: 3%;    
+    /*Colors & Effects*/
+    transition: color 0.35s;
+    transition: background 0.35s;
+    box-shadow:0px 0px 10px black;
+    /*Font*/
+    font-size: 1.5em;
+    transition: color 0.35s;
+    transition: background 0.35s;
+    box-shadow:0px 0px 10px black;
+}
+
+#noaaLogo
+{
+    /*Size & Position*/
+    position: fixed;
+    z-index: 2;
+    top: 8%;
+    left: 8.2%;
+    width: 8%;
+}
+
+#noaaLogoShadow
+{
+    /*Size & Position*/
+    position: fixed;
+    z-index: 1;
+    top: 8%;
+    left: 8.21%;
+    width: 8%;
+    height: 16%;
+    /*Colors & Effects*/ 
+    background: white; 
+    box-shadow: 7px -3px 15px black;
+    border-radius: 100%;
 }
 
 #temperature
 {
-      position: absolute;
-      top:  20%;
-      border-radius: 0.4em;
-      
+    /*Size & Position*/
+    position: absolute;
+    top:  17%;
 }
 
 #salinity
 {
-      position: absolute;
-      border-radius: 0.4em;
-      top:  24%;
+    /*Size & Position*/
+    position: absolute;
+    top:  22%;
 }
 
 #depth
 {
-      position: absolute;
-      border-radius: 0.4em;
-      top:  28%;  
+    /*Size & Position*/
+    position: absolute;
+    top:  27%;  
+}
+
+#calculateSeaWaterPropertiesButton
+{
+    /*Size & Position*/
+    position: fixed;
+    width: 14.35%;
+    height: 4%;
+    top: 40%;
+    left: 5%;
+}
+
+#waterDensityLabel
+{
+    /*Size & Position*/
+    position: fixed;
+    width: 14.35%;
+    height: 5%;
+    top: 45%;
+    left: 5%; 
+}
+
+#waterDensity
+{
+    /*Size & Position*/
+    position: fixed;
+    width: 14.35%;
+    height: 3%;
+    top: 48%;
+    left: 5%; 
+}
+
+#waterWaveVelocityLabel
+{
+    /*Size & Position*/
+    position: fixed;
+    width: 14.35%;
+    height: 5%;
+    top: 53%;
+    left: 5%; 
+}
+
+#waterWaveVelocity
+{
+    /*Size & Position*/
+    position: fixed;
+    width: 14.35%;
+    height: 3%;
+    top: 56%;
+    left: 5%;
+}
+
+#acousticScatteringForARigidSphereChartBlock
+{
+    /*Size & Position*/
+    position: fixed;
+    left: 23%;
+    right: 4%;
+    top: 14%;
+    height: 100%;
+}
+
+#acousticScatteringForARigidSphereChart
+{
+    /*Size & Position*/
+    position: absolute;
+    top: 0%;
+    left: 1%;
+    width: 90%;
+    height: 60%;
+    
+}
+
+#sphereCompositionLabel
+{
+    /*Size & Position*/
+    position: fixed;
+    width: 14.35%;
+    height: 5%;
+    top: 61%;
+    left: 5%; 
+}
+
+#sphereCompositionSelector
+{
+    /*Size & Position*/
+    position: fixed;
+    width: 14.35%;
+    height: 4%;
+    top: 64%;
+    left: 5%;
+}
+
+
+#sphereDensityLabel
+{
+    /*Size & Position*/
+    position: fixed;
+    width: 14.35%;
+    height: 5%;
+    top: 69%;
+    left: 5%; 
+}
+
+#sphereDensity
+{
+    /*Size & Position*/
+    position: fixed;
+    width: 14.35%;
+    height: 3%;
+    top: 72%;
+    left: 5%; 
+}
+
+#sphereWaveVelocityLabel
+{
+    /*Size & Position*/
+    position: fixed;
+    width: 14.35%;
+    height: 5%;
+    top: 77%;
+    left: 5%; 
+}
+
+#sphereWaveVelocity
+{
+    /*Size & Position*/
+    position: fixed;
+    width: 14.35%;
+    height: 3%;
+    top: 80%;
+    left: 5%;
+}
+
+#sphereRadiusLabel
+{
+    /*Size & Position*/
+    position: fixed;
+    width: 14.35%;
+    height: 5%;
+    top: 85%;
+    left: 5%; 
+}
+
+#sphereRadius
+{
+    /*Size & Position*/
+    position: fixed;
+    width: 14.35%;
+    height: 3%;
+    top: 88%;
+    left: 5%;
+}
+
+#lowerBoundLabel
+{
+    /*Size & Position*/
+    position: fixed;
+    width: 15%;
+    top: 77%;
+    left: 33%;
+}
+
+#lowerBoundInput
+{
+    /*Size & Position*/
+    position: fixed;
+    width: 5%;
+    height: 4%;
+    top: 80%;
+    left: 33%;
+}
+
+#upperBoundLabel
+{
+    /*Size & Position*/
+    position: fixed;
+    width: 15%;
+    top: 77%;
+    left: 41%;
+}
+
+#upperBoundInput
+{
+    /*Size & Position*/
+    position: fixed;
+    width: 5%;
+    height: 4%;
+    top: 80%;
+    left: 41%;
+}
+
+#incrementLabel
+{
+    /*Size & Position*/
+    position: fixed;
+    width: 15%;
+    top: 77%;
+    left: 49%;
+}
+
+#incrementInput
+{
+    /*Size & Position*/
+    position: fixed;
+    width: 5%;
+    height: 4%;
+    top: 80%;
+    left: 49%;
+    
+}
+
+#plotSolutionButton
+{
+    /*Size & Position*/
+    position: fixed;
+    width: 10%;
+    height: 5%;
+    top: 80%;
+    left: 57%;
+}
+
+#systemLog
+{
+    /*Size & Position*/
+    position: fixed;
+    width: 34%;
+    height: 5%;
+    top: 90%;
+    left: 33%;
+}
+
+#systemLogLabel
+{
+    /*Size & Position*/
+    position: fixed;
+    width: 30%;
+    height: 5%;
+    top: 87%;
+    left: 33%;
+}
+
+#title
+{
+    /*Size & Position*/
+    position: fixed;
+    top: 6%;
+    left: 22%;
+    z-index: 2;
+    /*Font*/
+    font-size: 2em;
+}
+
+#toolSelector
+{
+    
+    /*Size & Position*/
+    position: fixed;
+    width: 12%;
+    height: 4%;
+    top: 6%;
+    right: 5%;
+    z-index: 2
 }
 
