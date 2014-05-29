@@ -71,7 +71,7 @@
     position: absolute;
     left: 18%;
     right: 2%;
-    top: 4%;
+    top: 1%;
     height: 200%;    
 }
 
@@ -530,7 +530,6 @@
                 
 }
 
-
 /* 
  * Description:
  *
@@ -540,7 +539,7 @@
 {
     /*Size & Position*/
     display: block;
-    height: 70px;
+    height: 40px;
 }
 
 /* 
@@ -552,9 +551,9 @@
 {
     /*Size & Position*/
     position: relative;
-    height: 30%;
-    width: 90%;
-    left: 7%;
+    height: 47%;
+    width: 92.5%;
+    left: 6.7%;
 }
 
 /* 
