@@ -16,6 +16,26 @@
     /*Font*/    
 }
 
+#tabSetStyle
+{
+        list-style-type:none;
+        margin:0;
+        padding:0;
+        position: fixed;
+        z-index:1;
+        left: 2%;
+        top: 4%;
+        background: lightblue;
+        right: 2%;
+        height: 8%;
+        border-top-left-radius:2em;
+        border-top-right-radius:2em;
+        border-bottom-right-radius:2em;
+        box-shadow:7px -7px 10px gray;
+        opacity: 0.97;
+}
+
+
 #AcousticScatteringFromAFluidSphereInputBlock
 { 
     /*Size & Position*/
@@ -54,10 +74,16 @@
     transition: background 0.35s;
     box-shadow:0px 0px 10px black;
     /*Font*/
-    font-size: 1.5em;
+    font-size: 0.8em;
     transition: color 0.35s;
     transition: background 0.35s;
     box-shadow:0px 0px 10px black;
+}
+
+.label
+{
+    
+    font-size: 1em;
 }
 
 #noaaLogo

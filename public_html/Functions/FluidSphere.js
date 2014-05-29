@@ -55,7 +55,7 @@ setFactorsOnclick();
 function init()
 {
     //Initialize graph options.
-    acousticScatteringForAFluidSphereOptions = {title: "", animation:{duration: 3000, easing: 'out'}, hAxis:{title: 'Frequency (kHz)'}, vAxis:{title: ''}};
+    acousticScatteringForAFluidSphereOptions = {title: "Fluid Sphere Target Strength VS Acoustic Frequency", animation:{duration: 3000, easing: 'out'}, hAxis:{title: 'Frequency (Hz)'}, vAxis:{title: 'Target Strength'}};
     //Initialize graph object.
     acousticScatteringForAFluidSphereChart;
     //Initialize data array object.
@@ -768,6 +768,10 @@ function calculateSpherePropertiesOnClick()
     else if(document.getElementById('sphereCompositionSelector').value==="chooseMaterial")
     {
         //Nothing happens because nothing is chosen.
+    }
+    else
+    {
+        
     }
     setFactorsOnclick();   
 }

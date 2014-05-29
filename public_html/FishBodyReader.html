@@ -3,9 +3,8 @@
 <html>
         <!-- Write your comments here -->
         <head>
-                <!-- Write your comments here -->
+                <!-- Write your comments here -->    
                 <script type="text/JavaScript" src="https://www.google.com/jsapi"></script>
-
                 <!-- Write your comments here -->
                 <link rel="stylesheet" href="Styles/FishBodyReader.css" TYPE="text/css" MEDIA="screen">
                 <!-- Write your comments here -->
@@ -25,82 +24,72 @@
                 <!-- Write your comments here -->
                 <!--<img id="fishLogo" src="fish.png" alt="some_text">-->
                 <div id="fishBodyReaderInputBlock"> 
-                        <!-- Write your comments here -->          
-                        <input type="text" class="input" id="digital_fish_length" placeholder="Digital Fish Length" name="Digital Fish Length" value="">
                         <!-- Write your comments here -->
-                        <input type="text" class="input" id="scaled_fish_length" placeholder="Scaled Fish Length" name="Scaled Fish Length" value="">
+                        <div id="digitalFishLengthLabel">Digital Length</div>
                         <!-- Write your comments here -->
-                        <input type="text" class="input" id="angle" name="Angle" placeholder="Scattering Angle (Degrees)" value="" >
+                        <input type="text" class="input" id="digital_fish_length" placeholder="(mm)" name="Digital Fish Length" value="290">
                         <!-- Write your comments here -->
-                        <input type="text" class="input" id="minimum_order" placeholder="Minimum Order" name="Minimum Order" value="">
+                        <div id="scaledFishLengthLabel">Scaled Length</div>
                         <!-- Write your comments here -->
-                        <input type="text" class="input" id="maximum_order" placeholder="Maximum Order" name="Maximum Order" value="">
+                        <input type="text" class="input" id="scaled_fish_length" placeholder="(mm)" name="Scaled Fish Length" value="100">
                         <!-- Write your comments here -->
-                        <input type="text" class="input" id="minimum_frequency" placeholder="Min Frequency (kHz)" name="Minimum Frequency (KHz)" value="" >
+                        <div id="angleLabel">Angle(°)</div>
                         <!-- Write your comments here -->
-                        <input type="text" class="input" id="maximum_frequency" placeholder="Max Frequency (kHz)" name="Maximum Frequency (KHz)" value="">
+                        <input type="text" class="input" id="angle" name="Angle" placeholder="(°)" value="90" >
                         <!-- Write your comments here -->
-                        <input type="text" class="input" id="frequency_increment_size" placeholder="Increment Frequency (kHz)" name="Frequency Increment Size (KHz)" value="" ><br>
+                        <div id="minimumOrderLabel">Min Order</div>
                         <!-- Write your comments here -->
-                        <input type="text" class="input" id="cwater" placeholder="Wave Velocity" name="cwater"  value="" >
+                        <input type="text" class="input" id="minimum_order" placeholder="Min Order" name="Minimum Order" value="10">
                         <!-- Write your comments here -->
-                        <input type="text" class="input" id="rhow" placeholder="Density of sea water" name="rhow  " value="" >
+                        <div id="maximumOrderLabel">Max Order</div>
                         <!-- Write your comments here -->
-                        <input type="text" class="input" id="csb" placeholder="Swim Bladder Sound Speed" name="csb   " value="" >
+                        <input type="text" class="input" id="maximum_order" placeholder="Max Order" name="Maximum Order" value="40">
                         <!-- Write your comments here -->
-                        <input type="text" class="input" id="rhosb" placeholder="Swim Bladder Density" name="rhosb " value="" >
+                        <div id="minimumFrequencyLabel">Min Frequency</div>
                         <!-- Write your comments here -->
-                        <input type="text" class="input" id="cfb" placeholder="Fish Body Sound Speed" name="cfb   " value="" >
+                        <input type="text" class="input" id="minimum_frequency" placeholder="(kHz)" name="Minimum Frequency (KHz)" value="12" >
                         <!-- Write your comments here -->
-                        <input type="text" class="input" id="rhofb" placeholder="Fish Body Density" name="rhofb " value="">
+                        <div id="maximumFrequencyLabel">Max Frequency</div>
                         <!-- Write your comments here -->
-                        <img id="digitalFishLengthSymbol" src="Graphics/digitalFishLengthSymbol.png" alt="some_text">
+                        <input type="text" class="input" id="maximum_frequency" placeholder="(kHz)" name="Maximum Frequency (KHz)" value="200">
                         <!-- Write your comments here -->
-                        <img id="scaledFishLengthSymbol" src="Graphics/scaledFishLengthSymbol.png" alt="some_text">
+                        <div id="stepSizeLabel">Step Size</div>
                         <!-- Write your comments here -->
-                        <img id="scatteringAngleSymbol" src="Graphics/scatteringAngleSymbol.png" alt="some_text">
+                        <input type="text" class="input" id="frequency_increment_size" placeholder="(kHz)" name="Frequency Increment Size (KHz)" value="0.1" ><br>
                         <!-- Write your comments here -->
-                        <img id="minOrderSymbol" src="Graphics/minOrderSymbol.png" alt="some_text">
+                        <div id="waterSoundVelocityLabel">W Sound Velocity</div>
                         <!-- Write your comments here -->
-                        <img id="maxOrderSymbol" src="Graphics/maxOrderSymbol.png" alt="some_text">
+                        <input type="text" class="input" id="cwater" placeholder="(m/s)" name="cwater"  value="1460" >
                         <!-- Write your comments here -->
-                        <img id="minFrequencySymbol" src="Graphics/minFrequencySymbol.png" alt="some_text">
+                        <div id="waterDensityLabel">W Density</div>
                         <!-- Write your comments here -->
-                        <img id="maxFrequencySymbol" src="Graphics/maxFrequencySymbol.png" alt="some_text">
+                        <input type="text" class="input" id="rhow" placeholder="(kg/m^3)" name="rhow  " value="1000" >
                         <!-- Write your comments here -->
-                        <img id="frequencyIncrementSymbol" src="Graphics/frequencyIncrementSymbol.png" alt="some_text">
+                        <div id="swimBladderSoundVelocityLabel">SB Sound Velocity</div>
                         <!-- Write your comments here -->
-                        <img id="cWaterSymbol" src="Graphics/cWaterSymbol.png" alt="some_text">
+                        <input type="text" class="input" id="csb" placeholder="(m/s)" name="csb   " value="730" >
                         <!-- Write your comments here -->
-                        <img id="rhoWaterSymbol" src="Graphics/rhoWaterSymbol.png" alt="some_text">
+                        <div id="swimBladderDensityLabel">SB Density</div>
                         <!-- Write your comments here -->
-                        <img id="cSwimBladderSymbol" src="Graphics/cSwimBladderSymbol.png" alt="some_text">
+                        <input type="text" class="input" id="rhosb" placeholder="(kg/m^3)" name="rhosb " value="200" >
                         <!-- Write your comments here -->
-                        <img id="rhoSwimBladderSymbol" src="Graphics/rhoSwimBladderSymbol.png" alt="some_text">
+                        <div id="fishBodySoundVelocityLabel">FB Sound Velocity</div>
                         <!-- Write your comments here -->
-                        <img id="cFishBodySymbol" src="Graphics/cFishBodySymbol.png" alt="some_text">
+                        <input type="text" class="input" id="cfb" placeholder="(m/s)" name="cfb   " value="900" >
                         <!-- Write your comments here -->
-                        <img id="rhoFishBodySymbol" src="Graphics/rhoFishBodySymbol.png" alt="some_text">
+                        <div id="fishBodyDensityLabel">FB Density</div>
                         <!-- Write your comments here -->
-                        <div id="fileChooser">
-                                <!-- Write your comments here -->
-                                File Selection
-                                <!-- Write your comments here -->
-                                <input type="file" id="file_input">
-                                <!-- Write your comments here -->    
-                                <script type="text/javascript" src="Functions/FishBodyReader.js"></script>
+                        <input type="text" class="input" id="rhofb" placeholder="(kg/m^3)" name="rhofb " value="900">
+
+                                <input type="file" id="fileInput">
                                 <!-- Write your comments here -->    
                                 <script type="text/javascript" src="Functions/FluidSphere.js"></script>
+                                <!-- Write your comments here -->    
+                                <script type="text/javascript" src="Functions/FishBodyReader.js"></script>
                                 <!-- Write your comments here -->
-                                <script type="text/JavaScript">document.getElementById('file_input').addEventListener('change', readSingleFile, false);</script>
+                                <script type="text/JavaScript">document.getElementById('fileInput').addEventListener('change', readSingleFile, false);</script>
                         <!-- Write your comments here -->
-                        </div>
-                        <!-- Write your comments here -->
-                        <div id="downloadCSVFile">
-                            <!-- Write your comments here -->
-                            <a href="javascript:onDownload();">Download CSV File</a>   
-                        <!-- Write your comments here -->
-                        </div>
+                        <button type="button" class="input" id="downloadSolution" onclick="downloadSolutionOnClick();">Download Solution</button>
                 <!-- Write your comments here -->        
                 </div>    
                 <!-- Write your comments here -->
@@ -148,7 +137,7 @@
             <!-- Write your comments here -->    
             <select id="toolSelector" onclick="selectAcousticsToolOnClick();">
                 <!-- Write your comments here -->
-                <option value="chooseScatteringTool.">Choose Scattering Tool</option>
+                <option value="chooseScatteringTool.">Choose Graphing Tool</option>
                 <!-- Write your comments here -->
                 <option value="fluidSphereScattering">Fluid Sphere</option>
                 <!-- Write your comments here -->

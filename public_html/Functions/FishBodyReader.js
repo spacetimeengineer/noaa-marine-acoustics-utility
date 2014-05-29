@@ -453,7 +453,7 @@ function init()
  * Status:
  * Function is not stable.
  */
-function onDownload() 
+function downloadSolutionOnClick() 
 {
     //
     document.location = 'data:Application/octet-stream,' +encodeURIComponent(writeCSVFile());

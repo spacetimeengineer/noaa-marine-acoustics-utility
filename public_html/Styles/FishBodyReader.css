@@ -17,6 +17,23 @@
 }
 
 
+#tabSetStyle
+{
+        position: fixed;
+        z-index:1;
+        left: 2%;
+        top: 4%;
+        background: lightblue;
+        right: 2%;
+        height: 8%;
+        border-top-left-radius:2em;
+        border-top-right-radius:2em;
+        border-bottom-right-radius:2em;
+        box-shadow:7px -7px 10px gray;
+        opacity: 0.97;
+}
+
+
 /* 
  * Description:
  *
@@ -125,25 +142,32 @@
     box-shadow:0px 0px 100px lightblue;
 }
 
-/* 
- * Description:
- *
- * Status:
- */
 .input
 {
     /*Size & Position*/
-    position: absolute;
-    left: 15%;
-    width: 71%;
-    height: 3%;
+    width: 7%;
+    height: 3%;    
     /*Colors & Effects*/
     transition: color 0.35s;
     transition: background 0.35s;
     box-shadow:0px 0px 10px black;
     /*Font*/
-    font-size: 1.5em;
+    font-size: 1em;
+    transition: color 0.35s;
+    transition: background 0.35s;
+    box-shadow:0px 0px 10px black;
 }
+
+#digitalFishLengthLabel
+{
+    /*Size & Position*/
+    position: fixed;
+    width: 14.35%;
+    height: 5%;
+    top: 26.5%;
+    left: 4%; 
+}
+
 
 /* 
  * Description:
@@ -153,10 +177,19 @@
 #digital_fish_length
 {
     /*Size & Position*/
-    position: absolute;
-    top:  20%;
-    /*Colors & Effects*/
-    border-radius: 0.4em; 
+    position: fixed;
+    left: 4%;
+    top:  29%;
+}
+
+#scaledFishLengthLabel
+{
+    /*Size & Position*/
+    position: fixed;
+    width: 14.35%;
+    height: 5%;
+    top: 33.5%;
+    left: 4%; 
 }
 
 /* 
@@ -167,10 +200,19 @@
 #scaled_fish_length
 {
     /*Size & Position*/
-    position: absolute;
-    top:  24%;
-    /*Colors & Effects*/
-    border-radius: 0.4em;
+    position: fixed;
+    left: 4%;
+    top:  36%;
+}
+
+#angleLabel
+{
+    /*Size & Position*/
+    position: fixed;
+    width: 14.35%;
+    height: 5%;
+    top: 43.5%;
+    left: 4%; 
 }
 
 /* 
@@ -181,10 +223,19 @@
 #angle
 {
     /*Size & Position*/
-    position: absolute;
-    top:  28%;  
-    /*Colors & Effects*/
-    border-radius: 0.4em;
+    position: fixed;
+    left: 4%;
+    top:  46%;  
+}
+
+#minimumOrderLabel
+{
+    /*Size & Position*/
+    position: fixed;
+    width: 14.35%;
+    height: 5%;
+    top: 26.5%;
+    left: 13%; 
 }
 
 /* 
@@ -195,10 +246,19 @@
 #minimum_order
 {
     /*Size & Position*/
-    position: absolute;
-    top:  32%; 
-    /*Colors & Effects*/
-    border-radius: 0.4em;
+    position: fixed;
+    top: 29%;
+    left: 13%; 
+}
+
+#maximumOrderLabel
+{
+    /*Size & Position*/
+    position: fixed;
+    width: 14.35%;
+    height: 5%;
+    top: 33.5%;
+    left: 13%; 
 }
 
 /* 
@@ -209,10 +269,24 @@
 #maximum_order
 {
     /*Size & Position*/
-    position: absolute;
-    top:  36%;
-    /*Colors & Effects*/
-    border-radius: 0.4em;
+    position: fixed;
+    top: 36%;
+    left: 13%;
+}
+
+/* 
+ * Description:
+ *
+ * Status:
+ */
+#minimumFrequencyLabel
+{
+    /*Size & Position*/
+    position: fixed;
+    width: 14.35%;
+    height: 5%;
+    top: 50.5%;
+    left: 4%; 
 }
 
 /* 
@@ -223,10 +297,24 @@
 #minimum_frequency
 {
     /*Size & Position*/
-    position: absolute;
-    top:  40%;
-    /*Colors & Effects*/
-    border-radius: 0.4em;
+    position: fixed;
+    left: 4%;
+    top:  53%;  
+}
+
+/* 
+ * Description:
+ *
+ * Status:
+ */
+#maximumFrequencyLabel
+{
+    /*Size & Position*/
+    position: fixed;
+    width: 14.35%;
+    height: 5%;
+    top: 50.5%;
+    left: 13%; 
 }
 
 /* 
@@ -237,10 +325,22 @@
 #maximum_frequency
 {
     /*Size & Position*/
-    position: absolute;
-    top:  44%;
-    /*Colors & Effects*/
-    border-radius: 0.4em;
+    position: fixed;
+    left: 13%;
+    top:  53%;  
+}
+
+/* 
+ * Description:
+ *
+ * Status:
+ */
+#stepSizeLabel
+{
+    /*Size & Position*/
+    position: fixed;
+    top: 43.5%;
+    left: 13%; 
 }
 
 /* 
@@ -251,10 +351,22 @@
 #frequency_increment_size
 {
     /*Size & Position*/
-    position: absolute;
-    top:  48%;
-    /*Colors & Effects*/
-    border-radius: 0.4em; 
+    position: fixed;
+    left: 13%;
+    top:  46%;  
+}
+
+/* 
+ * Description:
+ *
+ * Status:
+ */
+#waterSoundVelocityLabel
+{
+    /*Size & Position*/
+    position: fixed;
+    top: 60.5%;
+    left: 4%; 
 }
 
 /* 
@@ -265,10 +377,22 @@
 #cwater
 {
     /*Size & Position*/
-    position: absolute;
-    top:  52%;
-    /*Colors & Effects*/   
-    border-radius: 0.4em;
+    position: fixed;
+    left: 4%;
+    top:  63%;  
+}
+
+/* 
+ * Description:
+ *
+ * Status:
+ */
+#waterDensityLabel
+{
+    /*Size & Position*/
+    position: fixed;
+    top: 60.5%;
+    left: 13%; 
 }
 
 /* 
@@ -279,10 +403,22 @@
 #rhow
 {
     /*Size & Position*/
-    position: absolute;
-    top:  56%;
-    /*Colors & Effects*/
-    border-radius: 0.4em;
+    position: fixed;
+    left: 13%;
+    top:  63%;  
+}
+
+/* 
+ * Description:
+ *
+ * Status:
+ */
+#swimBladderSoundVelocityLabel
+{
+    /*Size & Position*/
+    position: fixed;
+    top: 67.5%;
+    left: 4%; 
 }
 
 /* 
@@ -293,10 +429,24 @@
 #csb
 {
     /*Size & Position*/
-    position: absolute;
-    top:  60%;
-    /*Colors & Effects*/
-    border-radius: 0.4em;
+    position: fixed;
+    left: 4%;
+    top:  70%;
+}
+
+/* 
+ * Description:
+ *
+ * Status:
+ */
+#swimBladderDensityLabel
+{
+    /*Size & Position*/
+    position: fixed;
+    width: 14.35%;
+    height: 5%;
+    top: 67.5%;
+    left: 13%; 
 }
 
 /* 
@@ -307,10 +457,22 @@
 #rhosb
 {
     /*Size & Position*/
-    position: absolute;
-    top:  64%;
-    /*Colors & Effects*/
-    border-radius: 0.4em;
+    position: fixed;
+    left: 13%;
+    top:  70%;
+}
+
+/* 
+ * Description:
+ *
+ * Status:
+ */
+#fishBodySoundVelocityLabel
+{
+    /*Size & Position*/
+    position: fixed;
+    top:  74.5%;
+    left: 4%;
 }
 
 /* 
@@ -321,10 +483,23 @@
 #cfb
 {
     /*Size & Position*/
-    position: absolute;
-    top:  68%;
-    /*Colors & Effects*/
-    border-radius: 0.4em;
+    position: fixed;
+    left: 4%;
+    top:  77%;
+}
+
+
+/* 
+ * Description:
+ *
+ * Status:
+ */
+#fishBodyDensityLabel
+{
+    /*Size & Position*/
+    position: fixed;
+    left: 13%;
+    top:  74.5%;
 }
 
 /* 
@@ -335,22 +510,9 @@
 #rhofb
 {
     /*Size & Position*/
-    position: absolute;
-    top:  72%;
-    /*Colors & Effects*/
-    border-radius: 0.4em;
-}
-
-/* 
- * Description:
- *
- * Status:
- */
-#fileChooser:hover
-{
-    /*Colors & Effects*/
-    background:white;
-    box-shadow:0px 0px 80px gray;
+    position: fixed;
+    left: 13%;
+    top:  77%;
 }
 
 /* 
@@ -362,13 +524,8 @@
 {
     /*Size & Position*/
     position: fixed;
-    top: 79.5%;
+    top: 9%;
     left: 5%;
-    width: 14.3%;
-    height: 5%;
-    /*Colors & Effects*/
-    transition-duration: 0.5s;
-    border-radius: 0.5em;
 }
 
 /* 
@@ -391,18 +548,6 @@
                 
 }
 
-/* 
- * Description:
- *
- * Status:
- */
-#downloadCSVFile:hover
-{
-    /*Colors & Effects*/
-    background:white;
-    background:white;
-    box-shadow:0px 0px 100px gray;
-}
 
 /* 
  * Description:
@@ -428,202 +573,6 @@
     height: 30%;
     width: 90%;
     left: 7%;
-}
-
-/* 
- * Description:
- *
- * Status:
- */
-#digitalFishLengthSymbol
-{
-    /*Size & Position*/
-    position: absolute;
-    left: 4%;
-    top: 20%;
-    height: 25px;       
-}
-
-/* 
- * Description:
- *
- * Status:
- */
-#scaledFishLengthSymbol
-{
-    /*Size & Position*/
-    position: absolute;
-    left: 4%;
-    top: 24%;
-    height: 25px;        
-}
-
-/* 
- * Description:
- *
- * Status:
- */
-#scatteringAngleSymbol
-{
-    /*Size & Position*/
-    position: absolute;
-    left: 4%;
-    top: 28%;
-    height: 25px;    
-}
-
-/* 
- * Description:
- *
- * Status:
- */
-#minOrderSymbol
-{
-    /*Size & Position*/
-    position: absolute;
-    left: 4%;
-    top: 32%;
-    height: 25px;        
-}
-
-/* 
- * Description:
- *
- * Status:
- */
-#maxOrderSymbol
-{
-    /*Size & Position*/
-    position: absolute;
-    left: 4%;
-    top: 36%;
-    height: 25px;           
-}
-
-/* 
- * Description:
- *
- * Status:
- */
-#minFrequencySymbol
-{
-    /*Size & Position*/
-    position: absolute;
-    left: 4%;
-    top: 40%;
-    height: 25px;        
-}
-
-/* 
- * Description:
- *
- * Status:
- */
-#maxFrequencySymbol
-{
-    /*Size & Position*/
-    position: absolute;
-    left: 4%;
-    top: 44%;
-    height: 25px;        
-}
-
-/* 
- * Description:
- *
- * Status:
- */
-#frequencyIncrementSymbol
-{
-    /*Size & Position*/
-    position: absolute;
-    left: 4%;
-    top: 48%;
-    height: 25px;        
-}
-
-/* 
- * Description:
- *
- * Status:
- */
-#cWaterSymbol
-{
-    /*Size & Position*/
-    position: absolute;
-    left: 4%;
-    top: 52%;
-    height: 25px;   
-}
-
-/* 
- * Description:
- *
- * Status:
- */
-#rhoWaterSymbol
-{
-    /*Size & Position*/
-    position: absolute;
-    left: 4%;
-    top: 56%;
-    height: 25px;        
-}
-
-/* 
- * Description:
- *
- * Status:
- */
-#cSwimBladderSymbol
-{
-    /*Size & Position*/
-    position: absolute;
-    left: 4%;
-    top: 60%;
-    height: 25px;        
-}
-
-/* 
- * Description:
- *
- * Status:
- */
-#rhoSwimBladderSymbol
-{
-    /*Size & Position*/
-    position: absolute;
-    left: 4%;
-    top: 64%;
-    height: 25px;        
-}
-
-/* 
- * Description:
- *
- * Status:
- */
-#cFishBodySymbol
-{
-    /*Size & Position*/
-    position: absolute;
-    left: 4%;
-    top: 68%;
-    height: 25px;  
-}
-
-/* 
- * Description:
- *
- * Status:
- */
-#rhoFishBodySymbol
-{
-    /*Size & Position*/
-    position: absolute;
-    left: 4%;
-    top: 72%;
-    height: 25px; 
 }
 
 /* 
@@ -658,5 +607,23 @@
     z-index: 2
 }
 
+#downloadSolution
+{
+    /*Size & Position*/
+    position: fixed;
+    top: 91%;
+    left: 3.9%;
+    width: 16.1%;
+    height: 3.5%;
+    
+}
 
+
+#fileInput
+{
+    /*Size & Position*/
+    position: fixed;
+    top: 85%;
+    left: 3.83%;
+}
 
