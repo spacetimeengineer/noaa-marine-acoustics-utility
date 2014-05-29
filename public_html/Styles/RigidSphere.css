@@ -18,6 +18,9 @@
 
 #tabSetStyle
 {
+        list-style-type:none;
+        margin:0;
+        padding:0;
         position: fixed;
         z-index:1;
         left: 2%;
@@ -32,6 +35,7 @@
         opacity: 0.97;
 }
 
+
 #AcousticScatteringFromARigidSphereInputBlock
 { 
     /*Size & Position*/
@@ -42,7 +46,7 @@
     left: 2%;
     width: 20%;
     /*Colors & Effects*/
-    background: linear-gradient(lightblue, darkcyan); /* Standard syntax */
+    background: linear-gradient(lightblue, darkcyan);
     transition: color 1.5s;
     transition: background 1.5s;
     border-bottom-right-radius:2em;
@@ -63,21 +67,31 @@
 .input
 {
     /*Size & Position*/
-    position: absolute;
-    left: 15%;
-    width: 71%;
+    width: 7%;
     height: 3%;    
     /*Colors & Effects*/
     transition: color 0.35s;
     transition: background 0.35s;
     box-shadow:0px 0px 10px black;
     /*Font*/
-    font-size: 1.5em;
+    font-size: 0.8em;
     transition: color 0.35s;
     transition: background 0.35s;
     box-shadow:0px 0px 10px black;
+    font-family: sans-serif;
 }
 
+.label
+{
+    
+    font-size: 0.77em;
+}
+
+/* 
+ * Description:
+ *
+ * Status:
+ */
 #noaaLogo
 {
     /*Size & Position*/
@@ -86,52 +100,81 @@
     top: 8%;
     left: 8.2%;
     width: 8%;
+    height: 16%;
 }
 
+/* 
+ * Description:
+ *
+ * Status:
+ */
 #noaaLogoShadow
+{ 
+    /*Size & Position*/
+   position: fixed;
+   z-index: 1;
+   top: 8%;
+   left: 8.21%;
+   width: 8%;
+   height: 16%;
+    /*Colors & Effects*/
+   background: white; 
+   box-shadow: 7px -3px 15px black;
+   border-radius: 100%;
+}
+
+#temperatureLabel
 {
     /*Size & Position*/
     position: fixed;
-    z-index: 1;
-    top: 8%;
-    left: 8.21%;
-    width: 8%;
-    height: 16%;
-    /*Colors & Effects*/ 
-    background: white; 
-    box-shadow: 7px -3px 15px black;
-    border-radius: 100%;
+    width: 14.35%;
+    height: 5%;
+    top: 26.5%;
+    left: 4%; 
 }
 
 #temperature
 {
     /*Size & Position*/
-    position: absolute;
-    top:  17%;
+    position: fixed;
+    left: 4%;
+    top:  29%;
+}
+
+#salinityLabel
+{
+    /*Size & Position*/
+    position: fixed;
+    width: 14.35%;
+    height: 5%;
+    top: 33.5%;
+    left: 4%; 
 }
 
 #salinity
 {
     /*Size & Position*/
-    position: absolute;
-    top:  22%;
+    position: fixed;
+    left: 4%;
+    top:  36%;
+}
+
+#depthLabel
+{
+    /*Size & Position*/
+    position: fixed;
+    width: 14.35%;
+    height: 5%;
+    top: 40.5%;
+    left: 4%; 
 }
 
 #depth
 {
     /*Size & Position*/
-    position: absolute;
-    top:  27%;  
-}
-
-#calculateSeaWaterPropertiesButton
-{
-    /*Size & Position*/
     position: fixed;
-    width: 14.35%;
-    height: 4%;
-    top: 40%;
-    left: 5%;
+    left: 4%;
+    top:  43%;  
 }
 
 #waterDensityLabel
@@ -140,18 +183,17 @@
     position: fixed;
     width: 14.35%;
     height: 5%;
-    top: 45%;
-    left: 5%; 
+    top: 26.5%;
+    left: 13%; 
 }
 
 #waterDensity
 {
+    
     /*Size & Position*/
     position: fixed;
-    width: 14.35%;
-    height: 3%;
-    top: 48%;
-    left: 5%; 
+    top: 29%;
+    left: 13%; 
 }
 
 #waterWaveVelocityLabel
@@ -160,18 +202,16 @@
     position: fixed;
     width: 14.35%;
     height: 5%;
-    top: 53%;
-    left: 5%; 
+    top: 33.5%;
+    left: 13%; 
 }
 
 #waterWaveVelocity
 {
     /*Size & Position*/
     position: fixed;
-    width: 14.35%;
-    height: 3%;
-    top: 56%;
-    left: 5%;
+    top: 36%;
+    left: 13%;
 }
 
 #acousticScatteringForARigidSphereChartBlock
@@ -188,11 +228,10 @@
 {
     /*Size & Position*/
     position: absolute;
-    top: 0%;
-    left: 1%;
-    width: 90%;
-    height: 60%;
-    
+    bottom: 10%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
 }
 
 #sphereCompositionLabel
@@ -201,18 +240,16 @@
     position: fixed;
     width: 14.35%;
     height: 5%;
-    top: 61%;
-    left: 5%; 
+    top: 50.5%;
+    left: 4%; 
 }
 
 #sphereCompositionSelector
 {
     /*Size & Position*/
     position: fixed;
-    width: 14.35%;
-    height: 4%;
-    top: 64%;
-    left: 5%;
+    top: 53%;
+    left: 4%;
 }
 
 
@@ -222,18 +259,16 @@
     position: fixed;
     width: 14.35%;
     height: 5%;
-    top: 69%;
-    left: 5%; 
+    top: 57.5%;
+    left: 4%; 
 }
 
 #sphereDensity
 {
     /*Size & Position*/
     position: fixed;
-    width: 14.35%;
-    height: 3%;
-    top: 72%;
-    left: 5%; 
+    top: 60%;
+    left: 4%; 
 }
 
 #sphereWaveVelocityLabel
@@ -242,38 +277,66 @@
     position: fixed;
     width: 14.35%;
     height: 5%;
-    top: 77%;
-    left: 5%; 
+    top: 64.5%;
+    left: 4%; 
 }
 
 #sphereWaveVelocity
 {
     /*Size & Position*/
     position: fixed;
-    width: 14.35%;
-    height: 3%;
-    top: 80%;
-    left: 5%;
+    top: 67%;
+    left: 4%;
 }
 
 #sphereRadiusLabel
 {
     /*Size & Position*/
     position: fixed;
-    width: 14.35%;
-    height: 5%;
-    top: 85%;
-    left: 5%; 
+    top: 50.5%;
+    left: 13%; 
 }
 
 #sphereRadius
 {
     /*Size & Position*/
     position: fixed;
-    width: 14.35%;
+    top: 53%;
+    left: 13%;
+}
+
+#gFactorLabel
+{
+    /*Size & Position*/
+    position: fixed;
+    width: 4%;
     height: 3%;
-    top: 88%;
-    left: 5%;
+    top: 57.5%;
+    left: 13%; 
+}
+
+#gFactor
+{
+    /*Size & Position*/
+    position: fixed;
+    top: 60%;
+    left: 13%; 
+}
+
+#hFactorLabel
+{
+    /*Size & Position*/
+    position: fixed;
+    top: 64.5%;
+    left: 13%; 
+}
+
+#hFactor
+{
+    /*Size & Position*/
+    position: fixed;
+    top: 67%;
+    left: 13%; 
 }
 
 #lowerBoundLabel
@@ -281,56 +344,48 @@
     /*Size & Position*/
     position: fixed;
     width: 15%;
-    top: 77%;
-    left: 33%;
+    top: 74.5%;
+    left: 4%;
 }
 
 #lowerBoundInput
 {
     /*Size & Position*/
     position: fixed;
-    width: 5%;
-    height: 4%;
-    top: 80%;
-    left: 33%;
+    top: 77%;
+    left: 4%;
 }
 
 #upperBoundLabel
 {
     /*Size & Position*/
     position: fixed;
-    width: 15%;
-    top: 77%;
-    left: 41%;
+    top: 74.5%;
+    left: 13%;
 }
 
 #upperBoundInput
 {
     /*Size & Position*/
     position: fixed;
-    width: 5%;
-    height: 4%;
-    top: 80%;
-    left: 41%;
+    top: 77%;
+    left: 13%;
 }
 
 #incrementLabel
 {
     /*Size & Position*/
     position: fixed;
-    width: 15%;
-    top: 77%;
-    left: 49%;
+    top: 81.5%;
+    left: 4%;
 }
 
 #incrementInput
 {
     /*Size & Position*/
     position: fixed;
-    width: 5%;
-    height: 4%;
-    top: 80%;
-    left: 49%;
+    top: 84%;
+    left: 4%;
     
 }
 
@@ -338,10 +393,21 @@
 {
     /*Size & Position*/
     position: fixed;
-    width: 10%;
-    height: 5%;
-    top: 80%;
-    left: 57%;
+    top: 84%;
+    width: 7.2%;
+    height: 3.5%;
+    left: 13%;
+}
+
+#downloadSolution
+{
+    /*Size & Position*/
+    position: fixed;
+    top: 91%;
+    left: 3.9%;
+    width: 16.1%;
+    height: 3.5%;
+    
 }
 
 #systemLog
@@ -352,6 +418,7 @@
     height: 5%;
     top: 90%;
     left: 33%;
+    font-size: 1.5em;
 }
 
 #systemLogLabel
@@ -372,7 +439,8 @@
     left: 22%;
     z-index: 2;
     /*Font*/
-    font-size: 2em;
+    font-size: 1.6em;
+    font-family: sans-serif;
 }
 
 #toolSelector
@@ -380,7 +448,7 @@
     
     /*Size & Position*/
     position: fixed;
-    width: 12%;
+    width: 15%;
     height: 4%;
     top: 6%;
     right: 5%;

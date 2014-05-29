@@ -28,80 +28,77 @@
         <!-- Write your comments here -->
         <div id="AcousticScatteringFromARigidSphereInputBlock">
             <!-- Write your comments here -->
-            <input type="text" class="input" id="temperature" placeholder="Temperature (°C)" ><br>
+            <div id="temperatureLabel" class="label">Water Temp</div>
             <!-- Write your comments here -->
-            <input type="text" class="input" id="salinity" placeholder="Salinity (ppt)" ><br>
+            <div id="salinityLabel" class="label">Water Salinity</div>
             <!-- Write your comments here -->
-            <input type="text" class="input" id="depth" placeholder="Sea Water Depth (m)" ><br>
+            <div id="depthLabel" class="label">Water Depth</div>
             <!-- Write your comments here -->
-            <button type="button" id="calculateSeaWaterPropertiesButton" onclick="calculateSeaWaterPropertiesOnClick();">Calculate Sea Water Properties</button>
-            <div id="waterDensityLabel">Sea Water Density (kg/m^3)</div>
+            <input type="text" class="input" id="temperature" placeholder="(°C)" value = "15" onclick="calculateSeaWaterPropertiesOnClick();" onkeydown="calculateSeaWaterPropertiesOnClick();"><br>
             <!-- Write your comments here -->
-            <input type="text" class="input" id="waterDensity">
+            <input type="text" class="input" id="salinity" placeholder="(ppt)" value = "30" onclick="calculateSeaWaterPropertiesOnClick();" onkeydown="calculateSeaWaterPropertiesOnClick();"><br>
             <!-- Write your comments here -->
-            <div id="waterWaveVelocityLabel">Sea Water Sound Wave Velocity (m/s)</div>
+            <input type="text" class="input" id="depth" placeholder="(m)" value = "1" onclick="calculateSeaWaterPropertiesOnClick();" onkeydown="calculateSeaWaterPropertiesOnClick();"><br>
             <!-- Write your comments here -->
-            <input type="text" class="input" id="waterWaveVelocity" >
+            <div id="waterDensityLabel" class="label">Water Density</div>
             <!-- Write your comments here -->
-            <div id="sphereCompositionLabel">Sphere Material</div>
+            <input type="text" class="input" id="waterDensity" placeholder="(kg/m^3)" value = "1022.12" onclick="setFactorsOnclick();" onkeydown="setFactorsOnclick();">
             <!-- Write your comments here -->
-            <select id="sphereCompositionSelector" onclick="calculateSpherePropertiesOnClick();">
-                <!-- Write your comments here -->
-                <option value="chooseMaterial">Choose Material</option>
-                <!-- Write your comments here -->
-                <option value="tungstenCarbite">Tungsten Carbite</option>
-                <!-- Write your comments here -->
-                <option value="copper">Copper</option>
-                <!-- Write your comments here -->
-                <option value="aluminium">Aluminium</option>
-                <!-- Write your comments here -->
-                <option value="stainlessSteel">Stainless Steel</option>
-                <!-- Write your comments here -->
-                <option value="userInput">User Input Custom Properties</option>
+            <div id="waterWaveVelocityLabel" class="label">W Sound Velocity</div>
             <!-- Write your comments here -->
-            </select>
+            <input type="text" class="input" id="waterWaveVelocity" placeholder="(m/s)" value = "1500.96" onclick="setFactorsOnclick();" onkeydown="setFactorsOnclick();">
             <!-- Write your comments here -->
-            <div id="sphereDensityLabel">Sphere Density (kg/m^3)</div>
+            <div id="sphereDensityLabel" class="label">Sphere Density</div>
             <!-- Write your comments here -->
-            <input type="text" class="input" id="sphereDensity">
+            <input type="text" class="input" id="sphereDensity" onclick="setFactorsOnclick();" onkeydown="setFactorsOnclick();" value="Infinity">
             <!-- Write your comments here -->
-            <div id="sphereWaveVelocityLabel">Sphere Sound Wave Velocity (m/s)</div>
+            <div id="sphereWaveVelocityLabel" class="label">S Sound Velocity</div>
             <!-- Write your comments here -->
-            <input type="text" class="input" id="sphereWaveVelocity" >
+            <input type="text" class="input" id="sphereWaveVelocity" onclick="setFactorsOnclick();" onkeydown="setFactorsOnclick();" value="Infinity">
             <!-- Write your comments here -->
-            <div id="sphereRadiusLabel">Sphere Radius (mm)</div>
+            <div id="sphereRadiusLabel" class="label">Sphere Radius</div>
             <!-- Write your comments here -->
-            <input type="text" class="input" id="sphereRadius" >
+            <input type="text" class="input" id="sphereRadius" onclick="setFactorsOnclick();" onkeydown="setFactorsOnclick();" value="0.0225">
+            <!-- Write your comments here -->
+            <div id="gFactorLabel" class="label">g Factor</div> 
+            <!-- Write your comments here -->
+            <input type="text" class="input" id="gFactor">
+            <!-- Write your comments here -->
+            <div id="hFactorLabel" class="label">h Factor</div>
+            <!-- Write your comments here -->
+            <input type="text" class="input" id="hFactor">
+            <!-- Write your comments here -->
+            <div id="upperBoundLabel" class="label">Upper Bound</div>
+            <!-- Write your comments here -->
+            <input type="text" class="input" id="upperBoundInput" value="200000">
+            <!-- Write your comments here -->
+            <div id="lowerBoundLabel" class="label">Lower Bound</div>
+            <!-- Write your comments here -->
+            <input type="text" class="input" id="lowerBoundInput" value="12000">
+            <!-- Write your comments here -->
+            <div id="incrementLabel" class="label">Step Size</div>
+            <!-- Write your comments here -->
+            <input type="text" class="input" id="incrementInput" value="200">
+            <!-- Write your comments here -->
+            <button type="button" class="input" id="plotSolutionButton" onclick="plotSolutionOnClick();">Plot Solution</button>
+            <!-- Write your comments here -->
+            <button type="button" class="input" id="downloadSolution" onclick="downloadSolutionOnClick();">Download Solution</button>
+        
         <!-- Write your comments here -->
         </div> 
         <!-- Write your comments here -->
-        <script type="text/JavaScript" src="Functions/FluidSphere.js"></script>
+        <script type="text/JavaScript" src="Functions/RigidSphere.js"></script>
         <!-- Write your comments here -->
         <script type="text/javascript" src="Functions/FishBodyReader.js"></script>
-        <!-- Write your comments here -->    
-        <script type="text/javascript" src="Functions/RigidSphere.js"></script>
         <!-- Write your comments here -->
         <div id="acousticScatteringForARigidSphereChartBlock">
             <!-- Write your comments here -->
             <div id="acousticScatteringForARigidSphereChart"></div>
+            
             <!-- Write your comments here -->
-            <div id="upperBoundLabel">Upper Bound(kHz)</div>
+            <!--<div id="systemLogLabel">Function Testing Output Log</div>-->
             <!-- Write your comments here -->
-            <input type="text" class="input" id="upperBoundInput">
-            <!-- Write your comments here -->
-            <div id="lowerBoundLabel">Lower Bound(kHz)</div>
-            <!-- Write your comments here -->
-            <input type="text" class="input" id="lowerBoundInput">
-            <!-- Write your comments here -->
-            <div id="incrementLabel">Increment (kHz)</div>
-            <!-- Write your comments here -->
-            <input type="text" class="input" id="incrementInput">
-            <!-- Write your comments here -->
-            <button type="button" id="plotSolutionButton" onclick="plotSolutionOnClick();">Plot Solution</button>
-            <!-- Write your comments here -->
-            <div id="systemLogLabel">Function Testing Output Log</div>
-            <!-- Write your comments here -->
-            <input id="systemLog">
+            <!--<input id="systemLog">-->
             <!-- Write your comments here -->
         </div>
         <!-- Write your comments here -->
@@ -109,13 +106,13 @@
         <!-- Write your comments here -->
         <select id="toolSelector" onclick="selectAcousticsToolOnClick();">
             <!-- Write your comments here -->
-            <option value="chooseScatteringTool.">Choose Scattering Tool</option>
+            <option value="chooseScatteringTool.">Choose Graphing Tool</option>
             <!-- Write your comments here -->
-            <option value="fluidSphereScattering">Fluid Sphere</option>
+            <option value="fluidSphereScattering">Fluid Sphere Solution</option>
             <!-- Write your comments here -->
-            <option value="fishBodyScattering">Kirchoff Ray Mode</option>
+            <option value="rigidSphereScattering">Rigid Sphere Solution</option>
             <!-- Write your comments here -->
-            <option value="rigidSphereScattering">Rigid Sphere</option>
+            <option value="fishBodyScattering">Kirchhoff Ray Mode Solution</option>
         <!-- Write your comments here -->    
         </select>
     <!-- Write your comments here -->    

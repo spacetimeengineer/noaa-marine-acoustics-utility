@@ -2,7 +2,7 @@
  * Software Name:
  * Fuild Sphere Solution Grapher
  * Description:
- * Sound Scattering from a Fluid Sphere by Victor C. Anderson; The fluid sphere solution was used to build these funtions.
+ * Sound Scattering from a Fluid Sphere by Victor C. Anderson; The rigid sphere solution was used to build these funtions.
  * 
  * Acoustician:  Mike Jech
  * Software Engineer: Michael.C Ryan
@@ -32,11 +32,13 @@ var waveAmplitude;
 //
 var angularVelocity;
 // 
-var angularFrequency;
+var acousticFrequency;
+
+var systemLogOutput = new Array();
 
 //Initialize the values needed for gui setup.
 init();
-
+setFactorsOnclick();
 /*
  * Program End
  */
@@ -53,19 +55,11 @@ init();
 function init()
 {
     //Initialize graph options.
-    acousticScatteringForARigidSphereOptions = {title: "", animation:{duration: 3000, easing: 'out'}, hAxis:{title: 'Frequency (kHz)'}, vAxis:{title: ''}};
+    acousticScatteringForARigidSphereOptions = {title: "Rigid Sphere Reflectivity VS Acoustic Frequency", animation:{duration: 3000, easing: 'out'}, hAxis:{title: 'Frequency (Hz)'}, vAxis:{title: 'Rigid Sphere Reflectivity'}};
     //Initialize graph object.
     acousticScatteringForARigidSphereChart;
     //Initialize data array object.
     acousticScatteringForARigidSphereData = new Array();
-    //    
-    radius=1;
-    //
-    waveAmplitude=1;
-    //
-    angularVelocity=1;
-    //
-    angularFrequency=1;
     //Loads the line chart library....I think.
     google.load("visualization", "1", {packages:["corechart"]});
     //Callback functions?  not really sure what they are but they are required in order to plot.
@@ -260,49 +254,46 @@ function getCoefficientBeta(order, z)
  * Description:
  * Generates the scientific document specified value CSubM.
  * Example:
- * getCoefficientC(m);
+ * getCSubC(m,,,);
  * returns ...
  * Status:
  * Funtion is not stable.
  */
-function getCSubM(m, angularFrequency, waterWaveVelocity, sphereWaveVelocity)
+function getCSubM(m, acousticFrequency, waterWaveVelocity, sphereWaveVelocity, sphereDensity, waterDensity, sphereRadius)
 {
         //
-        var g = 0.5;//document.getElementById('sphereDensity').value/document.getElementById('waterDensity').value;
+        var g = sphereDensity/waterDensity;
         //
-        var h = 0.5;//document.getElementById('sphereWaveVelocity').value/document.getElementById('waterWaveVelocity').value;
-        //var angularFrequency = 1;
-        //var k = angularFrequency/parseFloat(document.getElementById('sphereWaveVelocity').value);
-        //var kPrime = angularFrequency/parseFloat(document.getElementById('waterWaveVelocity').value);
+        var h = sphereWaveVelocity/waterWaveVelocity;
         //
-        var k = angularFrequency/sphereWaveVelocity;
+        var kPrime = 2*Math.PI*acousticFrequency/sphereWaveVelocity;
         //
-        var kPrime = angularFrequency/waterWaveVelocity;        
+        var k = 2*Math.PI*acousticFrequency/waterWaveVelocity;        
         //
-        var a = 0.0225;//document.getElementById('sphereRadius').value;
+        var a = sphereRadius;
         //
-        var C=((getCoefficientAlpha(m,kPrime*a)/getCoefficientAlpha(m,k*a))*(getSphericalBesselFunctionY(m,k*a)/getSphericalBesselFunctionJ(m,kPrime*a))-(getCoefficientBeta(m,k*a)/getCoefficientAlpha(m,k*a))*g*h)/((getCoefficientAlpha(m,kPrime*a)/getCoefficientAlpha(m,k*a))*(getSphericalBesselFunctionJ(m,k*a)/getSphericalBesselFunctionJ(m,kPrime*a))-g*h);
+        var C=  (
+                    (getCoefficientAlpha(m,kPrime*a)/getCoefficientAlpha(m,k*a))*
+                
+                    (getSphericalBesselFunctionY(m,k*a)/getSphericalBesselFunctionJ(m,kPrime*a))-
+                
+                    (getCoefficientBeta(m,k*a)/getCoefficientAlpha(m,k*a))
+                    
+                    *g*h
+                )/
+                
+                (
+                    (getCoefficientAlpha(m,kPrime*a)/getCoefficientAlpha(m,k*a))*
+                    
+                    (getSphericalBesselFunctionJ(m,k*a)/getSphericalBesselFunctionJ(m,kPrime*a))-
+                    
+                    g*h
+                );
+        //    
+        systemLogOutput.push([m,parseFloat(C),getCoefficientAlpha(m,k*a), getCoefficientAlpha(m,kPrime*a), getCoefficientBeta(m,k*a)]);
         //
         return C;
-}
-
-/*
- * Description:
- * Generates the scientific document specified value A(m). This return value is complex. 
- * Example:
- * getCoefficientA(m);
- * returns 
- * Status:
- * Function is not stable.
- */
-function getCoefficientA(m)
-{
-        //
-        var A;
-        //A = getComplexProduct(getExponentiatedComplexNumber(getComplexNumber(0,-1),m),getComplexDivision(getComplexNumber(2*m+1,0),getComplexNumber(1,getCoefficientC(m,,))));
-        A = getComplexProduct(getComplexNumber(-1*waveAmplitude,0),A);
-        //
-        return A;
+        
 }
 
 /*
@@ -631,6 +622,34 @@ function getFarFieldWaveEquationSolution(angularFrequency, waterWaveVelocity, sp
 
 /*
  * Description:
+ * Sets the g and h values for display in the g and h text fields.
+ * Example:
+ * Not applicable: This is a gui function.
+ * Status:
+ * Function is not stable.
+ */
+function setFactorsOnclick()
+{
+    //
+    var waterWaveVelocity = (document.getElementById('waterWaveVelocity').value); 
+    //
+    var sphereWaveVelocity = (document.getElementById('sphereWaveVelocity').value);
+    //
+    var waterDensity = (document.getElementById('waterDensity').value);
+    //
+    var sphereDensity = (document.getElementById('sphereDensity').value);
+    //
+    var g = sphereDensity/waterDensity;
+    //
+    var h = sphereWaveVelocity/waterWaveVelocity;
+    //
+    document.getElementById('gFactor').value=g;
+    //
+    document.getElementById('hFactor').value=h;
+}
+
+/*
+ * Description:
  * Returns the division of one complex number by another.
  * Example:
  * getRigidSphereSolution(lowerBound, upperBound, increment, waterWaveVelocity, sphereWaveVelocity);
@@ -638,17 +657,17 @@ function getFarFieldWaveEquationSolution(angularFrequency, waterWaveVelocity, sp
  * Status:
  * Function is not stable.
  */
-function getRigidSphereSolution(lowerBound, upperBound, increment, waterWaveVelocity, sphereWaveVelocity)
+function getRigidSphereSolution(lowerBound, upperBound, increment, waterWaveVelocity, sphereWaveVelocity, sphereDensity, waterDensity, sphereRadius)
 {
     //
     acousticScatteringForARigidSphereData=[];
     //
-    acousticScatteringForARigidSphereData.push(["Frequency(kHz)","Target Strength (dB)"]);
+    acousticScatteringForARigidSphereData.push(["Frequency(Hz)","Target Strength (dB)"]);
     //
-    for (var angularFrequency=lowerBound; angularFrequency<upperBound; angularFrequency+=increment)
+    for (var acousticFrequency=lowerBound; acousticFrequency<upperBound; acousticFrequency+=increment)
     {
         //
-        acousticScatteringForARigidSphereData.push([parseFloat(angularFrequency),parseFloat(getFarFieldWaveEquationSolution(angularFrequency, waterWaveVelocity, sphereWaveVelocity))]);
+        acousticScatteringForARigidSphereData.push([parseFloat(acousticFrequency),parseFloat(getFarFieldWaveEquationSolution(acousticFrequency, waterWaveVelocity, sphereWaveVelocity, sphereDensity, waterDensity, sphereRadius))]);
     }
     //
     return acousticScatteringForARigidSphereData;
@@ -658,7 +677,7 @@ function getRigidSphereSolution(lowerBound, upperBound, increment, waterWaveVelo
  * Description: 
  * Plots the solutions to the chart.
  * Example:
- * Not Applicable: this is a graphing function.
+ * Not Applicable: this is a gui function.
  * Status:
  * Function is stable.
  */
@@ -675,30 +694,38 @@ function plotSolutionOnClick()
     //
     var sphereWaveVelocity = (document.getElementById('sphereWaveVelocity').value);
     //
-    acousticScatteringForARigidSphereGraph.draw(google.visualization.arrayToDataTable(getRigidSphereSolution(lowerBound, upperBound, increment, waterWaveVelocity, sphereWaveVelocity)), acousticScatteringForARigidSphereOptions);
+    var waterDensity = (document.getElementById('waterDensity').value);
+    //
+    var sphereDensity = (document.getElementById('sphereDensity').value);
+    
+    var  sphereRadius = (document.getElementById('sphereRadius').value);
+    
+    
+    //
+    acousticScatteringForARigidSphereGraph.draw(google.visualization.arrayToDataTable(getRigidSphereSolution(lowerBound, upperBound, increment, waterWaveVelocity, sphereWaveVelocity, sphereDensity, waterDensity, sphereRadius)), acousticScatteringForARigidSphereOptions);
 }
 
 /*
  * Description: 
  * Calcuates the acoustic properties of the seawater and plots the values in the input fields below the button.
  * Example:
- * Not applicable: This is a graphing function.
+ * Not applicable: This is a gui function.
  * Status:
  * Function is stable.
  */
 function calculateSeaWaterPropertiesOnClick()
 {
-    //
+    //Checks to see if the input fields are populated.
     if (document.getElementById('temperature').value === "" || document.getElementById('salinity').value === "" || document.getElementById('depth').value === "")
     {
         //Nothing happens if there are missing inputs.
     }
-    //
+    //If the input fields are correctly populated.
     else
     {
-        //
+        //Populates the sea water density field with a calculated result.
         document.getElementById('waterDensity').value = getSeaWaterDensity(document.getElementById('temperature').value, document.getElementById('salinity').value, document.getElementById('depth').value);
-        //
+        //Populates the sound speed field with a calculated result.
         document.getElementById('waterWaveVelocity').value = getSeaWaterSpeedOfSound(document.getElementById('temperature').value, document.getElementById('salinity').value, document.getElementById('depth').value);
     }
 }
@@ -714,54 +741,24 @@ function calculateSeaWaterPropertiesOnClick()
  */
 function calculateSpherePropertiesOnClick()
 {
-    //
-    if(document.getElementById('sphereCompositionSelector').value==="tungstenCarbite")
+    //If the zooplankton material is selected.
+    if(document.getElementById('sphereCompositionSelector').value==="zooplankton")
     {
-        //
-        document.getElementById('sphereDensity').value = 14900;
-        //
-        document.getElementById('sphereWaveVelocity').value = 6853;
-        //
-        document.getElementById('sphereRadius').value = 38.1;
-    }
-    //
-    else if(document.getElementById('sphereCompositionSelector').value==="copper")
-    {
-        //
-        document.getElementById('sphereDensity').value = 8947;
-        //
-        document.getElementById('sphereWaveVelocity').value = 4760;
-        //
-        document.getElementById('sphereRadius').value = 38.1;
-    }
-    //
-    else if(document.getElementById('sphereCompositionSelector').value==="aluminium")
-    {
-        //
-        document.getElementById('sphereDensity').value = 2700;
-        //
-        document.getElementById('sphereWaveVelocity').value = 6260;
-        //
-        document.getElementById('sphereRadius').value = 38.1;
-    }
-    //
-    else if(document.getElementById('sphereCompositionSelector').value==="stainlessSteel")
-    {
-        //
-        document.getElementById('sphereDensity').value = 7800;
-        //
-        document.getElementById('sphereWaveVelocity').value = 5610;
-        //
-        document.getElementById('sphereRadius').value = 38.1;
+        //Populates density field.
+        document.getElementById('sphereDensity').value = 1060;
+        //Populates speed of sound field.
+        document.getElementById('sphereWaveVelocity').value = 1550;
+        //Populates radius field.
+        document.getElementById('sphereRadius').value = 0.005;
     }
     //
     else if(document.getElementById('sphereCompositionSelector').value==="userInput")
     {
-        //
+        //Populates density field.
         document.getElementById('sphereDensity').value = "";
-        //
+        //Populates sound velocity field.
         document.getElementById('sphereWaveVelocity').value = "";
-        //
+        //Populates radius field.
         document.getElementById('sphereRadius').value = ""; 
     }
     //
@@ -769,6 +766,11 @@ function calculateSpherePropertiesOnClick()
     {
         //Nothing happens because nothing is chosen.
     }
+    else
+    {
+        
+    }
+    setFactorsOnclick();   
 }
 
 /*
@@ -785,25 +787,104 @@ function selectAcousticsToolOnClick()
     //
     if(document.getElementById('toolSelector').value==="fluidSphereScattering")
     {
-        //
+        //The browser will navigate to the fluid sphere page.
         window.location = "FluidSphere.html";
     }
-    //
+    //Else if the tool sele
     else if(document.getElementById('toolSelector').value==="fishBodyScattering")
     {
-        //
+        //The browser will navigate to the KRM page.
         window.location = "FishBodyReader.html";
     }
-        //
+    //
     else if(document.getElementById('toolSelector').value==="rigidSphereScattering")
     {
-        //
+        //The browser will navigate to the rigid sphere page.
         window.location = "RigidSphere.html";
     }
-    //
+    //If nothing is selected the page does not navigate anywhere else.
     else 
     {
 
     }
+}
+
+/*
+ * Description: 
+ * 
+ * Example:
+ * 
+ * Status:
+ * Function is not stable.
+ */
+function downloadSolutionOnClick()
+{
+    //
+    var lowerBound = parseFloat(document.getElementById('lowerBoundInput').value);
+    //
+    var upperBound = parseFloat(document.getElementById('upperBoundInput').value);
+    //
+    var increment = parseFloat(document.getElementById('incrementInput').value);
+    //
+    var waterWaveVelocity = (document.getElementById('waterWaveVelocity').value); 
+    //
+    var sphereWaveVelocity = (document.getElementById('sphereWaveVelocity').value);
+    //
+    var waterDensity = (document.getElementById('waterDensity').value);
+    //
+    var sphereDensity = (document.getElementById('sphereDensity').value);
+    //
+    var  sphereRadius = (document.getElementById('sphereRadius').value);
+    //
+    var waterTemperature = (document.getElementById('temperature').value);
+    //
+    var waterSalinity = (document.getElementById('salinity').value);
+    //
+    var waterDepth = (document.getElementById('depth').value);
+    //
+    var gFactor = (document.getElementById('gFactor').value);
+    //
+    var hFactor = (document.getElementById('hFactor').value);
+    //
+    document.location = 'data:Application/octet-stream,' +encodeURIComponent(writeSolutionFile(lowerBound, upperBound, increment, waterWaveVelocity, sphereWaveVelocity, sphereDensity, waterDensity, sphereRadius, waterTemperature, waterSalinity, waterDepth, gFactor, hFactor));
+}
+
+/*
+ * Description: 
+ * 
+ * Example:
+ * 
+ * Status:
+ * Function is not stable.
+ */
+function writeSolutionFile(lowerBound, upperBound, increment, waterWaveVelocity, sphereWaveVelocity, sphereDensity, waterDensity, sphereRadius, waterTemperature, waterSalinity, waterDepth, gFactor, hFactor)
+{
+    //This makes up the contents of the entire file.
+    var solutionFile =
+    "Generated from the Rigid Sphere Back-Scattering Grapher:"+"\r\n"+"\r\n"+
+    "Water Temperature: "+waterTemperature+"\r\n"+
+    "Water Salinity: "+waterSalinity+"\r\n"+
+    "Water Depth: "+waterDepth+"\r\n"+
+    "Water Density: "+waterDensity+"\r\n"+
+    "Water Sound Velocity: "+waterWaveVelocity+"\r\n"+
+    "Sphere Radius: "+sphereRadius+"\r\n"+
+    "Sphere Density: "+sphereDensity+"\r\n"+
+    "Sphere Sound Velocity: "+sphereWaveVelocity+"\r\n"+
+    "g Factor: "+gFactor+"\r\n"+
+    "h Factor: "+hFactor+"\r\n"+
+    "Lower Frequency Bound: "+lowerBound+"\r\n"+
+    "Upper Frequency Bound: "+upperBound+"\r\n"+
+    "Frequency Increment Size: "+increment+"\r\n"+"\r\n";
+    
+    //This is the data which describes the curve but not the parameters.
+    var solutionData = getRigidSphereSolution(lowerBound, upperBound, increment, waterWaveVelocity, sphereWaveVelocity, sphereDensity, waterDensity, sphereRadius);
+    //Run through each element in the solution data to build up the file in a organized format.
+    for (var i=0; i<solutionData.length; i++)
+    {
+        //Appends new data in the text file.
+        solutionFile=solutionFile+solutionData[i]+"\r\n";
+    }
+    //Returns the text file string.
+    return solutionFile;
 }
 
