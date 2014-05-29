@@ -46,7 +46,7 @@
     left: 2%;
     width: 20%;
     /*Colors & Effects*/
-    background: linear-gradient(lightblue, blue);
+    background: linear-gradient(lightblue, #0066ff);
     transition: color 1.5s;
     transition: background 1.5s;
     border-bottom-right-radius:2em;
@@ -78,14 +78,20 @@
     transition: color 0.35s;
     transition: background 0.35s;
     box-shadow:0px 0px 10px black;
+    font-family: sans-serif;
 }
 
 .label
 {
     
-    font-size: 1em;
+    font-size: 0.77em;
 }
 
+/* 
+ * Description:
+ *
+ * Status:
+ */
 #noaaLogo
 {
     /*Size & Position*/
@@ -94,21 +100,27 @@
     top: 8%;
     left: 8.2%;
     width: 8%;
+    height: 16%;
 }
 
+/* 
+ * Description:
+ *
+ * Status:
+ */
 #noaaLogoShadow
-{
+{ 
     /*Size & Position*/
-    position: fixed;
-    z-index: 1;
-    top: 8%;
-    left: 8.21%;
-    width: 8%;
-    height: 16%;
-    /*Colors & Effects*/ 
-    background: white; 
-    box-shadow: 7px -3px 15px black;
-    border-radius: 100%;
+   position: fixed;
+   z-index: 1;
+   top: 8%;
+   left: 8.21%;
+   width: 8%;
+   height: 16%;
+    /*Colors & Effects*/
+   background: white; 
+   box-shadow: 7px -3px 15px black;
+   border-radius: 100%;
 }
 
 #temperatureLabel
@@ -427,7 +439,8 @@
     left: 22%;
     z-index: 2;
     /*Font*/
-    font-size: 2em;
+    font-size: 1.6em;
+    font-family: sans-serif;
 }
 
 #toolSelector
@@ -435,7 +448,7 @@
     
     /*Size & Position*/
     position: fixed;
-    width: 12%;
+    width: 15%;
     height: 4%;
     top: 6%;
     right: 5%;

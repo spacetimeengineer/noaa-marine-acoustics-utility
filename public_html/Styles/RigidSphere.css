@@ -16,6 +16,22 @@
     /*Font*/    
 }
 
+#tabSetStyle
+{
+        position: fixed;
+        z-index:1;
+        left: 2%;
+        top: 4%;
+        background: lightblue;
+        right: 2%;
+        height: 8%;
+        border-top-left-radius:2em;
+        border-top-right-radius:2em;
+        border-bottom-right-radius:2em;
+        box-shadow:7px -7px 10px gray;
+        opacity: 0.97;
+}
+
 #AcousticScatteringFromARigidSphereInputBlock
 { 
     /*Size & Position*/
@@ -26,7 +42,7 @@
     left: 2%;
     width: 20%;
     /*Colors & Effects*/
-    background: linear-gradient(lightblue, blue); /* Standard syntax */
+    background: linear-gradient(lightblue, darkcyan); /* Standard syntax */
     transition: color 1.5s;
     transition: background 1.5s;
     border-bottom-right-radius:2em;

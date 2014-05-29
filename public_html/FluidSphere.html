@@ -34,19 +34,19 @@
             <!-- Write your comments here -->
             <div id="depthLabel" class="label">Water Depth</div>
             <!-- Write your comments here -->
-            <input type="text" class="input" id="temperature" placeholder="Temp (°C)" value = "15" onclick="calculateSeaWaterPropertiesOnClick();" onkeydown="calculateSeaWaterPropertiesOnClick();"><br>
+            <input type="text" class="input" id="temperature" placeholder="(°C)" value = "15" onclick="calculateSeaWaterPropertiesOnClick();" onkeydown="calculateSeaWaterPropertiesOnClick();"><br>
             <!-- Write your comments here -->
-            <input type="text" class="input" id="salinity" placeholder="Salinity (ppt)" value = "30" onclick="calculateSeaWaterPropertiesOnClick();" onkeydown="calculateSeaWaterPropertiesOnClick();"><br>
+            <input type="text" class="input" id="salinity" placeholder="(ppt)" value = "30" onclick="calculateSeaWaterPropertiesOnClick();" onkeydown="calculateSeaWaterPropertiesOnClick();"><br>
             <!-- Write your comments here -->
-            <input type="text" class="input" id="depth" placeholder="Depth (m)" value = "1" onclick="calculateSeaWaterPropertiesOnClick();" onkeydown="calculateSeaWaterPropertiesOnClick();"><br>
+            <input type="text" class="input" id="depth" placeholder="(m)" value = "1" onclick="calculateSeaWaterPropertiesOnClick();" onkeydown="calculateSeaWaterPropertiesOnClick();"><br>
             
             <div id="waterDensityLabel" class="label">Water Density</div>
             <!-- Write your comments here -->
-            <input type="text" class="input" id="waterDensity" placeholder="Density(kg/m^3)" value = "1022.12" onclick="setFactorsOnclick();" onkeydown="setFactorsOnclick();">
+            <input type="text" class="input" id="waterDensity" placeholder="(kg/m^3)" value = "1022.12" onclick="setFactorsOnclick();" onkeydown="setFactorsOnclick();">
             <!-- Write your comments here -->
             <div id="waterWaveVelocityLabel" class="label">W Sound Velocity</div>
             <!-- Write your comments here -->
-            <input type="text" class="input" id="waterWaveVelocity" placeholder="Sound Velocity (m/s)" value = "1500.96" onclick="setFactorsOnclick();" onkeydown="setFactorsOnclick();">
+            <input type="text" class="input" id="waterWaveVelocity" placeholder="(m/s)" value = "1500.96" onclick="setFactorsOnclick();" onkeydown="setFactorsOnclick();">
             <!-- Write your comments here -->
             <div id="sphereCompositionLabel" class="label">Sphere Material</div>
             <!-- Write your comments here -->
@@ -77,17 +77,6 @@
             <div id="hFactorLabel" class="label">h Factor</div>
             <!-- Write your comments here -->
             <input type="text" class="input" id="hFactor">
-        
-        <!-- Write your comments here -->
-        </div> 
-        <!-- Write your comments here -->
-        <script type="text/JavaScript" src="Functions/FluidSphere.js"></script>
-        <!-- Write your comments here -->
-        <script type="text/javascript" src="Functions/FishBodyReader.js"></script>
-        <!-- Write your comments here -->
-        <div id="acousticScatteringForAFluidSphereChartBlock">
-            <!-- Write your comments here -->
-            <div id="acousticScatteringForAFluidSphereChart"></div>
             <!-- Write your comments here -->
             <div id="upperBoundLabel" class="label">Upper Bound</div>
             <!-- Write your comments here -->
@@ -104,6 +93,17 @@
             <button type="button" class="input" id="plotSolutionButton" onclick="plotSolutionOnClick();">Plot Solution</button>
             <!-- Write your comments here -->
             <button type="button" class="input" id="downloadSolution" onclick="downloadSolutionOnClick();">Download Solution</button>
+        
+        <!-- Write your comments here -->
+        </div> 
+        <!-- Write your comments here -->
+        <script type="text/JavaScript" src="Functions/FluidSphere.js"></script>
+        <!-- Write your comments here -->
+        <script type="text/javascript" src="Functions/FishBodyReader.js"></script>
+        <!-- Write your comments here -->
+        <div id="acousticScatteringForAFluidSphereChartBlock">
+            <!-- Write your comments here -->
+            <div id="acousticScatteringForAFluidSphereChart"></div>
             
             <!-- Write your comments here -->
             <!--<div id="systemLogLabel">Function Testing Output Log</div>-->
@@ -118,11 +118,11 @@
             <!-- Write your comments here -->
             <option value="chooseScatteringTool.">Choose Graphing Tool</option>
             <!-- Write your comments here -->
-            <option value="fluidSphereScattering">Fluid Sphere</option>
+            <option value="fluidSphereScattering">Fluid Sphere Solution</option>
             <!-- Write your comments here -->
-            <option value="fishBodyScattering">Kirchhoff Ray Mode</option>
+            <option value="rigidSphereScattering">Rigid Sphere Solution</option>
             <!-- Write your comments here -->
-            <option value="rigidSphereScattering">Rigid Sphere</option>
+            <option value="fishBodyScattering">Kirchhoff Ray Mode Solution</option>
         <!-- Write your comments here -->    
         </select>
     <!-- Write your comments here -->    

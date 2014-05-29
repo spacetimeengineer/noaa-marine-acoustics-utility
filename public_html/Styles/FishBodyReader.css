@@ -49,7 +49,7 @@
     left: 2%;
     width: 20%;
     /*Colors & Effects*/
-    background: linear-gradient(lightblue, blue); /* Standard syntax */
+    background: linear-gradient(lightblue, #006633); /* Standard syntax */
     transition: color 1.5s;
     transition: background 1.5s;
     border-bottom-right-radius:2em;
@@ -109,24 +109,6 @@
    background: white; 
    box-shadow: 7px -3px 15px black;
    border-radius: 100%;
-}
-
-/* 
- * Description:
- *
- * Status:
- */
-#topWhiteBorder
-{
-    /*Size & Position*/
-    display: block;
-    position: fixed;
-    z-index: 1;
-    width: 100%;
-    top: 0%;
-    height: 4%;
-    /*Colors & Effects*/
-    background: white;
 }
 
 /* 
@@ -588,7 +570,8 @@
     left: 22%;
     z-index: 2;
     /*Font*/
-    font-size: 2em;
+    font-size: 1.6em;
+    font-family: sans-serif;
 }
 
 /* 
@@ -600,7 +583,7 @@
 {
     /*Size & Position*/
     position: fixed;
-    width: 12%;
+    width: 15%;
     height: 4%;
     top: 6%;
     right: 5%;
@@ -618,12 +601,33 @@
     
 }
 
+/* 
+ * Description:
+ *
+ * Status:
+ */
+#fileInputLabel
+{
+    /*Size & Position*/
+    position: fixed;
+    top: 82.5%;
+    left: 3.9%;
+}
 
+/* 
+ * Description:
+ *
+ * Status:
+ */
 #fileInput
 {
     /*Size & Position*/
     position: fixed;
     top: 85%;
-    left: 3.83%;
+    left: 3.75%;
 }
 
+.label
+{
+    font-size: 0.77em;
+}

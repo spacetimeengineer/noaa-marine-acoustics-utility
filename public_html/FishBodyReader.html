@@ -25,69 +25,71 @@
                 <!--<img id="fishLogo" src="fish.png" alt="some_text">-->
                 <div id="fishBodyReaderInputBlock"> 
                         <!-- Write your comments here -->
-                        <div id="digitalFishLengthLabel">Digital Length</div>
+                        <div id="digitalFishLengthLabel" class="label">Digital Length</div>
                         <!-- Write your comments here -->
                         <input type="text" class="input" id="digital_fish_length" placeholder="(mm)" name="Digital Fish Length" value="290">
                         <!-- Write your comments here -->
-                        <div id="scaledFishLengthLabel">Scaled Length</div>
+                        <div id="scaledFishLengthLabel" class="label">Scaled Length</div>
                         <!-- Write your comments here -->
                         <input type="text" class="input" id="scaled_fish_length" placeholder="(mm)" name="Scaled Fish Length" value="100">
                         <!-- Write your comments here -->
-                        <div id="angleLabel">Angle(°)</div>
+                        <div id="angleLabel" class="label">Angle</div>
                         <!-- Write your comments here -->
                         <input type="text" class="input" id="angle" name="Angle" placeholder="(°)" value="90" >
                         <!-- Write your comments here -->
-                        <div id="minimumOrderLabel">Min Order</div>
+                        <div id="minimumOrderLabel" class="label">Min Order</div>
                         <!-- Write your comments here -->
                         <input type="text" class="input" id="minimum_order" placeholder="Min Order" name="Minimum Order" value="10">
                         <!-- Write your comments here -->
-                        <div id="maximumOrderLabel">Max Order</div>
+                        <div id="maximumOrderLabel" class="label">Max Order</div>
                         <!-- Write your comments here -->
                         <input type="text" class="input" id="maximum_order" placeholder="Max Order" name="Maximum Order" value="40">
                         <!-- Write your comments here -->
-                        <div id="minimumFrequencyLabel">Min Frequency</div>
+                        <div id="minimumFrequencyLabel" class="label">Min Frequency</div>
                         <!-- Write your comments here -->
                         <input type="text" class="input" id="minimum_frequency" placeholder="(kHz)" name="Minimum Frequency (KHz)" value="12" >
                         <!-- Write your comments here -->
-                        <div id="maximumFrequencyLabel">Max Frequency</div>
+                        <div id="maximumFrequencyLabel" class="label">Max Frequency</div>
                         <!-- Write your comments here -->
                         <input type="text" class="input" id="maximum_frequency" placeholder="(kHz)" name="Maximum Frequency (KHz)" value="200">
                         <!-- Write your comments here -->
-                        <div id="stepSizeLabel">Step Size</div>
+                        <div id="stepSizeLabel" class="label">Step Size</div>
                         <!-- Write your comments here -->
                         <input type="text" class="input" id="frequency_increment_size" placeholder="(kHz)" name="Frequency Increment Size (KHz)" value="0.1" ><br>
                         <!-- Write your comments here -->
-                        <div id="waterSoundVelocityLabel">W Sound Velocity</div>
+                        <div id="waterSoundVelocityLabel" class="label">W Sound Velocity</div>
                         <!-- Write your comments here -->
                         <input type="text" class="input" id="cwater" placeholder="(m/s)" name="cwater"  value="1460" >
                         <!-- Write your comments here -->
-                        <div id="waterDensityLabel">W Density</div>
+                        <div id="waterDensityLabel" class="label">W Density</div>
                         <!-- Write your comments here -->
                         <input type="text" class="input" id="rhow" placeholder="(kg/m^3)" name="rhow  " value="1000" >
                         <!-- Write your comments here -->
-                        <div id="swimBladderSoundVelocityLabel">SB Sound Velocity</div>
+                        <div id="swimBladderSoundVelocityLabel" class="label">SB Sound Velocity</div>
                         <!-- Write your comments here -->
                         <input type="text" class="input" id="csb" placeholder="(m/s)" name="csb   " value="730" >
                         <!-- Write your comments here -->
-                        <div id="swimBladderDensityLabel">SB Density</div>
+                        <div id="swimBladderDensityLabel" class="label">SB Density</div>
                         <!-- Write your comments here -->
                         <input type="text" class="input" id="rhosb" placeholder="(kg/m^3)" name="rhosb " value="200" >
                         <!-- Write your comments here -->
-                        <div id="fishBodySoundVelocityLabel">FB Sound Velocity</div>
+                        <div id="fishBodySoundVelocityLabel" class="label">FB Sound Velocity</div>
                         <!-- Write your comments here -->
                         <input type="text" class="input" id="cfb" placeholder="(m/s)" name="cfb   " value="900" >
                         <!-- Write your comments here -->
-                        <div id="fishBodyDensityLabel">FB Density</div>
+                        <div id="fishBodyDensityLabel" class="label">FB Density</div>
                         <!-- Write your comments here -->
                         <input type="text" class="input" id="rhofb" placeholder="(kg/m^3)" name="rhofb " value="900">
-
-                                <input type="file" id="fileInput">
-                                <!-- Write your comments here -->    
-                                <script type="text/javascript" src="Functions/FluidSphere.js"></script>
-                                <!-- Write your comments here -->    
-                                <script type="text/javascript" src="Functions/FishBodyReader.js"></script>
-                                <!-- Write your comments here -->
-                                <script type="text/JavaScript">document.getElementById('fileInput').addEventListener('change', readSingleFile, false);</script>
+                        <!-- Write your comments here -->
+                        <div id="fileInputLabel" class="label">Select A Fish Body .DAT File To Graph</div>
+                        <!-- Write your comments here -->    
+                        <input type="file" id="fileInput">
+                        <!-- Write your comments here -->    
+                        <script type="text/javascript" src="Functions/FluidSphere.js"></script>
+                        <!-- Write your comments here -->    
+                        <script type="text/javascript" src="Functions/FishBodyReader.js"></script>
+                        <!-- Write your comments here -->
+                        <script type="text/JavaScript">document.getElementById('fileInput').addEventListener('change', readSingleFile, false);</script>
                         <!-- Write your comments here -->
                         <button type="button" class="input" id="downloadSolution" onclick="downloadSolutionOnClick();">Download Solution</button>
                 <!-- Write your comments here -->        
@@ -139,11 +141,11 @@
                 <!-- Write your comments here -->
                 <option value="chooseScatteringTool.">Choose Graphing Tool</option>
                 <!-- Write your comments here -->
-                <option value="fluidSphereScattering">Fluid Sphere</option>
+                <option value="fluidSphereScattering">Fluid Sphere Solution</option>
                 <!-- Write your comments here -->
-                <option value="fishBodyScattering">Kirchhoff Ray Mode</option>
+            <option value="rigidSphereScattering">Rigid Sphere Solution</option>
                 <!-- Write your comments here -->
-                <option value="rigidSphereScattering">Rigid Sphere</option>
+                <option value="fishBodyScattering">Kirchhoff Ray Mode Solution</option>
             <!-- Write your comments here -->
             </select>     
         <!-- Write your comments here -->      

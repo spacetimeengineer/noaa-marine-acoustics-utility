@@ -55,7 +55,7 @@ setFactorsOnclick();
 function init()
 {
     //Initialize graph options.
-    acousticScatteringForAFluidSphereOptions = {title: "Fluid Sphere Target Strength VS Acoustic Frequency", animation:{duration: 3000, easing: 'out'}, hAxis:{title: 'Frequency (Hz)'}, vAxis:{title: 'Target Strength'}};
+    acousticScatteringForAFluidSphereOptions = {title: "Fluid Sphere Reflectivity VS Acoustic Frequency", animation:{duration: 3000, easing: 'out'}, hAxis:{title: 'Frequency (Hz)'}, vAxis:{title: 'Fluid Sphere Reflectivity'}};
     //Initialize graph object.
     acousticScatteringForAFluidSphereChart;
     //Initialize data array object.
