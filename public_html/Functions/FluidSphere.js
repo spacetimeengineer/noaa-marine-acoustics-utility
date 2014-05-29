@@ -705,7 +705,6 @@ function plotSolutionOnClick()
     
     //
     acousticScatteringForAFluidSphereGraph.draw(google.visualization.arrayToDataTable(getFluidSphereSolution(lowerBound, upperBound, increment, waterWaveVelocity, sphereWaveVelocity, sphereDensity, waterDensity, sphereRadius)), acousticScatteringForAFluidSphereOptions);
-    document.getElementById('systemLog').value = systemLogOutput;
 }
 
 /*
@@ -863,8 +862,7 @@ function downloadSolutionOnClick()
 function writeSolutionFile(lowerBound, upperBound, increment, waterWaveVelocity, sphereWaveVelocity, sphereDensity, waterDensity, sphereRadius, waterTemperature, waterSalinity, waterDepth, gFactor, hFactor)
 {
     //This makes up the contents of the entire file.
-    var solutionFile =
-    "Generated from the Fluid Sphere Back-Scattering Grapher:"+"\r\n"+"\r\n"+
+    var solutionFile = "Generated from the Fluid Sphere Back-Scattering Grapher:"+"\r\n"+"\r\n"+
     "Water Temperature: "+waterTemperature+"\r\n"+
     "Water Salinity: "+waterSalinity+"\r\n"+
     "Water Depth: "+waterDepth+"\r\n"+

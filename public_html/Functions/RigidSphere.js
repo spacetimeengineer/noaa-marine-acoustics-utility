@@ -597,7 +597,7 @@ function getFarFieldWaveEquationSolution(angularFrequency, waterWaveVelocity, sp
        //
        var k = angularFrequency/sphereWaveVelocity;
        //
-       var a = 0.0225;//document.getElementById('sphereRadius').value;
+       var a = document.getElementById('sphereRadius').value;
        //
        var R = 2/(k*a);
        //
@@ -860,8 +860,8 @@ function downloadSolutionOnClick()
 function writeSolutionFile(lowerBound, upperBound, increment, waterWaveVelocity, sphereWaveVelocity, sphereDensity, waterDensity, sphereRadius, waterTemperature, waterSalinity, waterDepth, gFactor, hFactor)
 {
     //This makes up the contents of the entire file.
-    var solutionFile =
-    "Generated from the Rigid Sphere Back-Scattering Grapher:"+"\r\n"+"\r\n"+
+    var solutionFile;
+    solutionFile = "Generated from the Rigid Sphere Back-Scattering Grapher:"+"\r\n"+"\r\n"+
     "Water Temperature: "+waterTemperature+"\r\n"+
     "Water Salinity: "+waterSalinity+"\r\n"+
     "Water Depth: "+waterDepth+"\r\n"+

@@ -10,8 +10,6 @@
         <!-- Write your comments here -->
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <!-- Write your comments here -->
-        <link rel="stylesheet" href="Styles/NavigationTabs.css" TYPE="text/css" MEDIA="screen">
-        <!-- Write your comments here -->
         <link rel="stylesheet" href="Styles/RigidSphere.css" TYPE="text/css" MEDIA="screen">
         <!-- Write your comments here -->
     </head>
@@ -50,15 +48,15 @@
             <!-- Write your comments here -->
             <div id="sphereDensityLabel" class="label">Sphere Density</div>
             <!-- Write your comments here -->
-            <input type="text" class="input" id="sphereDensity" onclick="setFactorsOnclick();" onkeydown="setFactorsOnclick();" value="Infinity">
+            <input type="text" class="input" id="sphereDensity" onclick="setFactorsOnclick();" onkeydown="setFactorsOnclick();" value="Infinity" placeholder="(kg/m^3)">
             <!-- Write your comments here -->
             <div id="sphereWaveVelocityLabel" class="label">S Sound Velocity</div>
             <!-- Write your comments here -->
-            <input type="text" class="input" id="sphereWaveVelocity" onclick="setFactorsOnclick();" onkeydown="setFactorsOnclick();" value="Infinity">
+            <input type="text" class="input" id="sphereWaveVelocity" onclick="setFactorsOnclick();" onkeydown="setFactorsOnclick();" value="Infinity" placeholder="(m/s)">
             <!-- Write your comments here -->
             <div id="sphereRadiusLabel" class="label">Sphere Radius</div>
             <!-- Write your comments here -->
-            <input type="text" class="input" id="sphereRadius" onclick="setFactorsOnclick();" onkeydown="setFactorsOnclick();" value="0.0225">
+            <input type="text" class="input" id="sphereRadius" onclick="setFactorsOnclick();" onkeydown="setFactorsOnclick();" value="0.0225" placeholder="(m)">
             <!-- Write your comments here -->
             <div id="gFactorLabel" class="label">g Factor</div> 
             <!-- Write your comments here -->
@@ -70,15 +68,15 @@
             <!-- Write your comments here -->
             <div id="upperBoundLabel" class="label">Upper Bound</div>
             <!-- Write your comments here -->
-            <input type="text" class="input" id="upperBoundInput" value="200000">
+            <input type="text" class="input" id="upperBoundInput" value="200000" placeholder="(kHz)">
             <!-- Write your comments here -->
             <div id="lowerBoundLabel" class="label">Lower Bound</div>
             <!-- Write your comments here -->
-            <input type="text" class="input" id="lowerBoundInput" value="12000">
+            <input type="text" class="input" id="lowerBoundInput" value="12000" placeholder="(kHz)">
             <!-- Write your comments here -->
             <div id="incrementLabel" class="label">Step Size</div>
             <!-- Write your comments here -->
-            <input type="text" class="input" id="incrementInput" value="200">
+            <input type="text" class="input" id="incrementInput" value="200" placeholder="(kHz)">
             <!-- Write your comments here -->
             <button type="button" class="input" id="plotSolutionButton" onclick="plotSolutionOnClick();">Plot Solution</button>
             <!-- Write your comments here -->
