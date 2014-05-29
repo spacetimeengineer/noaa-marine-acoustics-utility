@@ -448,10 +448,10 @@
     
     /*Size & Position*/
     position: fixed;
-    width: 15%;
+    width: 20%;
     height: 4%;
     top: 6%;
     right: 5%;
-    z-index: 2
+    z-index: 2;
 }
 

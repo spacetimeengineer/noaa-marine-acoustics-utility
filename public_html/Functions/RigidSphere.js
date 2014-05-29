@@ -592,12 +592,11 @@ function getSeaWaterDensity(degreesCelsius, salinityPartsPerThousand, depthMeter
  * Status:
  * Function is not stable.
  */
-function getFarFieldWaveEquationSolution(angularFrequency, waterWaveVelocity, sphereWaveVelocity)
+function getFarFieldWaveEquationSolution(acousticFrequency, waterWaveVelocity, sphereRadius)
 {      
+       var k = 2*Math.PI*acousticFrequency/waterWaveVelocity; 
        //
-       var k = angularFrequency/sphereWaveVelocity;
-       //
-       var a = document.getElementById('sphereRadius').value;
+       var a = sphereRadius;//document.getElementById('sphereRadius').value;
        //
        var R = 2/(k*a);
        //
@@ -657,7 +656,7 @@ function setFactorsOnclick()
  * Status:
  * Function is not stable.
  */
-function getRigidSphereSolution(lowerBound, upperBound, increment, waterWaveVelocity, sphereWaveVelocity, sphereDensity, waterDensity, sphereRadius)
+function getRigidSphereSolution(lowerBound, upperBound, increment, waterWaveVelocity, sphereRadius)
 {
     //
     acousticScatteringForARigidSphereData=[];
@@ -667,7 +666,7 @@ function getRigidSphereSolution(lowerBound, upperBound, increment, waterWaveVelo
     for (var acousticFrequency=lowerBound; acousticFrequency<upperBound; acousticFrequency+=increment)
     {
         //
-        acousticScatteringForARigidSphereData.push([parseFloat(acousticFrequency),parseFloat(getFarFieldWaveEquationSolution(acousticFrequency, waterWaveVelocity, sphereWaveVelocity, sphereDensity, waterDensity, sphereRadius))]);
+        acousticScatteringForARigidSphereData.push([parseFloat(acousticFrequency),parseFloat(getFarFieldWaveEquationSolution(acousticFrequency, waterWaveVelocity, sphereRadius))]);
     }
     //
     return acousticScatteringForARigidSphereData;
@@ -692,17 +691,11 @@ function plotSolutionOnClick()
     //
     var waterWaveVelocity = (document.getElementById('waterWaveVelocity').value); 
     //
-    var sphereWaveVelocity = (document.getElementById('sphereWaveVelocity').value);
-    //
-    var waterDensity = (document.getElementById('waterDensity').value);
-    //
-    var sphereDensity = (document.getElementById('sphereDensity').value);
-    
     var  sphereRadius = (document.getElementById('sphereRadius').value);
     
     
     //
-    acousticScatteringForARigidSphereGraph.draw(google.visualization.arrayToDataTable(getRigidSphereSolution(lowerBound, upperBound, increment, waterWaveVelocity, sphereWaveVelocity, sphereDensity, waterDensity, sphereRadius)), acousticScatteringForARigidSphereOptions);
+    acousticScatteringForARigidSphereGraph.draw(google.visualization.arrayToDataTable(getRigidSphereSolution(lowerBound, upperBound, increment, waterWaveVelocity, sphereRadius)), acousticScatteringForARigidSphereOptions);
 }
 
 /*

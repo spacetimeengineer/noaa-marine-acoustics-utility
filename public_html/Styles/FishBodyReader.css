@@ -49,7 +49,7 @@
     left: 2%;
     width: 20%;
     /*Colors & Effects*/
-    background: linear-gradient(lightblue, #006633); /* Standard syntax */
+    background: linear-gradient(lightblue, darkslateblue); /* Standard syntax */
     transition: color 1.5s;
     transition: background 1.5s;
     border-bottom-right-radius:2em;
@@ -582,7 +582,7 @@
 {
     /*Size & Position*/
     position: fixed;
-    width: 15%;
+    width: 20%;
     height: 4%;
     top: 6%;
     right: 5%;
