@@ -899,6 +899,15 @@ function writeSolutionFile(lowerBound, upperBound, increment, waterWaveVelocity,
  */
 function expandMathBlock()
 {
+    //
+    var instructionBlock = document.getElementById("instructionBlock");
+    //
+    if (instructionBlock.style.left!=="150%")
+    {
+        //Set left attribute to 150%.
+        instructionBlock.style.left = "150%";
+    }
+
     //Makes reference to mathBlock object.
     var mathBlock = document.getElementById("mathBlock");
     //If its left attribute is equal to 25%.
@@ -919,6 +928,36 @@ function expandMathBlock()
     }
 }
 
+function expandInstructionBlock()
+{
+    //
+    var mathBlock = document.getElementById("mathBlock");
+    //
+    if (mathBlock.style.left!=="150%")
+    {
+        //Set left attribute to 150%.
+        mathBlock.style.left = "150%";
+    }
+    //Makes reference to instructionBlock object.
+    var instructionBlock = document.getElementById("instructionBlock");
+    //If its left attribute is equal to 25%.
+    if (instructionBlock.style.left!=="25%")
+    {
+        //Set left attribute to 150%.
+        instructionBlock.style.left = "25%";
+    }
+    //If its left attribute is equal to 150%.
+    else if (instructionBlock.style.left!=="150%")
+    {
+        //Set left attribute to 25%.
+        instructionBlock.style.left = "150%";
+    }
+    else
+    {
+        //This state should never be reached.
+    }
+}
+
 function plotExampleSolution()
 {
     document.getElementById('lowerBoundInput').value = 0;
@@ -936,6 +975,12 @@ function plotExampleSolution()
     document.getElementById('sphereDensity').value = 1060;
     //
     document.getElementById('sphereRadius').value = 0.0225;
+    // 
+    document.getElementById('temperature').value = 15;
+    //
+    document.getElementById('salinity').value = 30;
+    //
+    document.getElementById('depth').value = 1;
     //
     var lowerBound = parseFloat(document.getElementById('lowerBoundInput').value);
     //
