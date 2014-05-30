@@ -1,3 +1,8 @@
+/* 
+ * Description:
+ *
+ * Status:
+ */
 #templateElementIDStyle
 {
     /*Size & Position*/
@@ -7,6 +12,11 @@
     /*Font*/    
 }
 
+/* 
+ * Description:
+ *
+ * Status:
+ */
 .templateClassStyle
 {
     /*Size & Position*/
@@ -16,25 +26,23 @@
     /*Font*/    
 }
 
-#tabSetStyle
+#header
 {
-        list-style-type:none;
-        margin:0;
-        padding:0;
-        position: fixed;
-        z-index:1;
-        left: 2%;
-        top: 4%;
-        background: lightblue;
-        right: 2%;
-        height: 8%;
-        border-top-left-radius:2em;
-        border-top-right-radius:2em;
-        border-bottom-right-radius:2em;
-        box-shadow:7px -7px 10px gray;
-        opacity: 0.97;
+    /*Size & Position*/
+    position:fixed;
+    left: 2%;
+    top: 4%;
+    right: 2%;
+    height: 8%;
+    z-index:1;
+    /*Colors & Effects*/    
+    background: lightblue;
+    border-top-left-radius:2em;
+    border-top-right-radius:2em;
+    border-bottom-right-radius:2em;
+    box-shadow:7px -7px 10px gray;
+    opacity: 0.97;
 }
-
 
 #AcousticScatteringFromAFluidSphereInputBlock
 { 
@@ -45,6 +53,7 @@
     bottom: 3%;
     left: 2%;
     width: 20%;
+    z-index:0;
     /*Colors & Effects*/
     background: linear-gradient(lightblue, #0066ff);
     transition: color 1.5s;
@@ -123,6 +132,11 @@
    border-radius: 100%;
 }
 
+/* 
+ * Description:
+ *
+ * Status:
+ */
 #temperatureLabel
 {
     /*Size & Position*/
@@ -133,6 +147,11 @@
     left: 4%; 
 }
 
+/* 
+ * Description:
+ *
+ * Status:
+ */
 #temperature
 {
     /*Size & Position*/
@@ -141,6 +160,11 @@
     top:  29%;
 }
 
+/* 
+ * Description:
+ *
+ * Status:
+ */
 #salinityLabel
 {
     /*Size & Position*/
@@ -151,6 +175,11 @@
     left: 4%; 
 }
 
+/* 
+ * Description:
+ *
+ * Status:
+ */
 #salinity
 {
     /*Size & Position*/
@@ -159,6 +188,11 @@
     top:  36%;
 }
 
+/* 
+ * Description:
+ *
+ * Status:
+ */
 #depthLabel
 {
     /*Size & Position*/
@@ -169,6 +203,11 @@
     left: 4%; 
 }
 
+/* 
+ * Description:
+ *
+ * Status:
+ */
 #depth
 {
     /*Size & Position*/
@@ -177,6 +216,11 @@
     top:  43%;  
 }
 
+/* 
+ * Description:
+ *
+ * Status:
+ */
 #waterDensityLabel
 {
     /*Size & Position*/
@@ -187,6 +231,11 @@
     left: 13%; 
 }
 
+/* 
+ * Description:
+ *
+ * Status:
+ */
 #waterDensity
 {
     
@@ -196,6 +245,11 @@
     left: 13%; 
 }
 
+/* 
+ * Description:
+ *
+ * Status:
+ */
 #waterWaveVelocityLabel
 {
     /*Size & Position*/
@@ -206,6 +260,11 @@
     left: 13%; 
 }
 
+/* 
+ * Description:
+ *
+ * Status:
+ */
 #waterWaveVelocity
 {
     /*Size & Position*/
@@ -214,26 +273,26 @@
     left: 13%;
 }
 
-#acousticScatteringForAFluidSphereChartBlock
-{
-    /*Size & Position*/
-    position: fixed;
-    left: 23%;
-    right: 4%;
-    top: 14%;
-    height: 100%;
-}
-
+/* 
+ * Description:
+ *
+ * Status:
+ */
 #acousticScatteringForAFluidSphereChart
 {
     /*Size & Position*/
-    position: absolute;
-    bottom: 10%;
-    left: 0%;
-    width: 100%;
-    height: 100%;
+    position: fixed;
+    top: 20%;
+    left: 25%;
+    width: 70%;
+    height: 80%;
 }
 
+/* 
+ * Description:
+ *
+ * Status:
+ */
 #sphereCompositionLabel
 {
     /*Size & Position*/
@@ -244,6 +303,11 @@
     left: 4%; 
 }
 
+/* 
+ * Description:
+ *
+ * Status:
+ */
 #sphereCompositionSelector
 {
     /*Size & Position*/
@@ -252,7 +316,11 @@
     left: 4%;
 }
 
-
+/* 
+ * Description:
+ *
+ * Status:
+ */
 #sphereDensityLabel
 {
     /*Size & Position*/
@@ -263,6 +331,11 @@
     left: 4%; 
 }
 
+/* 
+ * Description:
+ *
+ * Status:
+ */
 #sphereDensity
 {
     /*Size & Position*/
@@ -271,6 +344,11 @@
     left: 4%; 
 }
 
+/* 
+ * Description:
+ *
+ * Status:
+ */
 #sphereWaveVelocityLabel
 {
     /*Size & Position*/
@@ -281,6 +359,11 @@
     left: 4%; 
 }
 
+/* 
+ * Description:
+ *
+ * Status:
+ */
 #sphereWaveVelocity
 {
     /*Size & Position*/
@@ -289,6 +372,11 @@
     left: 4%;
 }
 
+/* 
+ * Description:
+ *
+ * Status:
+ */
 #sphereRadiusLabel
 {
     /*Size & Position*/
@@ -297,6 +385,11 @@
     left: 13%; 
 }
 
+/* 
+ * Description:
+ *
+ * Status:
+ */
 #sphereRadius
 {
     /*Size & Position*/
@@ -305,6 +398,11 @@
     left: 13%;
 }
 
+/* 
+ * Description:
+ *
+ * Status:
+ */
 #gFactorLabel
 {
     /*Size & Position*/
@@ -315,6 +413,11 @@
     left: 13%; 
 }
 
+/* 
+ * Description:
+ *
+ * Status:
+ */
 #gFactor
 {
     /*Size & Position*/
@@ -323,6 +426,11 @@
     left: 13%; 
 }
 
+/* 
+ * Description:
+ *
+ * Status:
+ */
 #hFactorLabel
 {
     /*Size & Position*/
@@ -331,6 +439,11 @@
     left: 13%; 
 }
 
+/* 
+ * Description:
+ *
+ * Status:
+ */
 #hFactor
 {
     /*Size & Position*/
@@ -339,6 +452,11 @@
     left: 13%; 
 }
 
+/* 
+ * Description:
+ *
+ * Status:
+ */
 #lowerBoundLabel
 {
     /*Size & Position*/
@@ -348,6 +466,11 @@
     left: 4%;
 }
 
+/* 
+ * Description:
+ *
+ * Status:
+ */
 #lowerBoundInput
 {
     /*Size & Position*/
@@ -356,6 +479,11 @@
     left: 4%;
 }
 
+/* 
+ * Description:
+ *
+ * Status:
+ */
 #upperBoundLabel
 {
     /*Size & Position*/
@@ -364,6 +492,11 @@
     left: 13%;
 }
 
+/* 
+ * Description:
+ *
+ * Status:
+ */
 #upperBoundInput
 {
     /*Size & Position*/
@@ -372,6 +505,11 @@
     left: 13%;
 }
 
+/* 
+ * Description:
+ *
+ * Status:
+ */
 #incrementLabel
 {
     /*Size & Position*/
@@ -380,6 +518,11 @@
     left: 4%;
 }
 
+/* 
+ * Description:
+ *
+ * Status:
+ */
 #incrementInput
 {
     /*Size & Position*/
@@ -389,6 +532,11 @@
     
 }
 
+/* 
+ * Description:
+ *
+ * Status:
+ */
 #plotSolutionButton
 {
     /*Size & Position*/
@@ -399,6 +547,11 @@
     left: 13%;
 }
 
+/* 
+ * Description:
+ *
+ * Status:
+ */
 #downloadSolution
 {
     /*Size & Position*/
@@ -410,6 +563,11 @@
     
 }
 
+/* 
+ * Description:
+ *
+ * Status:
+ */
 #systemLog
 {
     /*Size & Position*/
@@ -421,6 +579,11 @@
     font-size: 1.5em;
 }
 
+/* 
+ * Description:
+ *
+ * Status:
+ */
 #systemLogLabel
 {
     /*Size & Position*/
@@ -431,21 +594,30 @@
     left: 33%;
 }
 
+/* 
+ * Description:
+ *
+ * Status:
+ */
 #title
 {
     /*Size & Position*/
     position: fixed;
-    top: 6%;
+    top: 6.5%;
     left: 22%;
     z-index: 2;
     /*Font*/
-    font-size: 1.6em;
+    font-size: 1.2em;
     font-family: sans-serif;
 }
 
+/* 
+ * Description:
+ *
+ * Status:
+ */
 #toolSelector
 {
-    
     /*Size & Position*/
     position: fixed;
     width: 20%;
@@ -455,3 +627,95 @@
     z-index: 2;
 }
 
+/* 
+ * Description:
+ *
+ * Status:
+ */
+#mathButton
+{
+    /*Size & Position*/
+    position: fixed;
+    width: 7%;
+    height: 4%;
+    top: 6%;
+    left: 66%;
+    z-index: 3;    
+}
+
+/* 
+ * Description:
+ *
+ * Status:
+ */
+#instructionButton
+{
+    /*Size & Position*/
+    position: fixed;
+    width: 7%;
+    height: 4%;
+    top: 6%;
+    left: 57%;
+    z-index: 3;   
+}
+
+/* 
+ * Description:
+ *
+ * Status:
+ */
+#exampleButton
+{
+    /*Size & Position*/
+    position: fixed;
+    width: 7%;
+    height: 4%;
+    top: 6%;
+    left: 48%;
+    z-index: 3;
+}
+
+/* 
+ * Description:
+ *
+ * Status:
+ */
+#mathBlock
+{
+    /*Size & Position*/
+    position: fixed;
+    width: 100%;
+    height: 79%;
+    left: 150%;
+    top: 18%;
+    z-index: 2;
+    opacity: 0.96;
+    /*Colors & Effects*/
+    background: lightblue;
+    transition: 0.8s;
+    border-bottom-left-radius: 2em;
+    box-shadow:7px -7px 10px gray;
+}
+
+#fluidSphereMath
+{
+    /*Size & Position*/
+    position: absolute;
+    left: 2%;
+    top: 18%;
+    height: 68%;
+    width: 70%;
+    /*Colors & Effects*/
+
+}
+
+/* 
+ * Description:
+ *
+ * Status:
+ */
+#instructionsBlock
+{
+    /*Size & Position*/
+    position: fixed;
+}

@@ -16,7 +16,7 @@
     /*Font*/    
 }
 
-#tabSetStyle
+#header
 {
         list-style-type:none;
         margin:0;
@@ -123,6 +123,11 @@
    border-radius: 100%;
 }
 
+/* 
+ * Description:
+ *
+ * Status:
+ */
 #temperatureLabel
 {
     /*Size & Position*/
@@ -133,6 +138,11 @@
     left: 4%; 
 }
 
+/* 
+ * Description:
+ *
+ * Status:
+ */
 #temperature
 {
     /*Size & Position*/
@@ -141,6 +151,11 @@
     top:  29%;
 }
 
+/* 
+ * Description:
+ *
+ * Status:
+ */
 #salinityLabel
 {
     /*Size & Position*/
@@ -151,6 +166,11 @@
     left: 4%; 
 }
 
+/* 
+ * Description:
+ *
+ * Status:
+ */
 #salinity
 {
     /*Size & Position*/
@@ -159,6 +179,11 @@
     top:  36%;
 }
 
+/* 
+ * Description:
+ *
+ * Status:
+ */
 #depthLabel
 {
     /*Size & Position*/
@@ -169,6 +194,11 @@
     left: 4%; 
 }
 
+/* 
+ * Description:
+ *
+ * Status:
+ */
 #depth
 {
     /*Size & Position*/
@@ -177,6 +207,11 @@
     top:  43%;  
 }
 
+/* 
+ * Description:
+ *
+ * Status:
+ */
 #waterDensityLabel
 {
     /*Size & Position*/
@@ -187,6 +222,11 @@
     left: 13%; 
 }
 
+/* 
+ * Description:
+ *
+ * Status:
+ */
 #waterDensity
 {
     
@@ -196,6 +236,11 @@
     left: 13%; 
 }
 
+/* 
+ * Description:
+ *
+ * Status:
+ */
 #waterWaveVelocityLabel
 {
     /*Size & Position*/
@@ -206,6 +251,11 @@
     left: 13%; 
 }
 
+/* 
+ * Description:
+ *
+ * Status:
+ */
 #waterWaveVelocity
 {
     /*Size & Position*/
@@ -214,6 +264,11 @@
     left: 13%;
 }
 
+/* 
+ * Description:
+ *
+ * Status:
+ */
 #acousticScatteringForARigidSphereChartBlock
 {
     /*Size & Position*/
@@ -224,6 +279,11 @@
     height: 100%;
 }
 
+/* 
+ * Description:
+ *
+ * Status:
+ */
 #acousticScatteringForARigidSphereChart
 {
     /*Size & Position*/
@@ -234,6 +294,11 @@
     height: 100%;
 }
 
+/* 
+ * Description:
+ *
+ * Status:
+ */
 #sphereCompositionLabel
 {
     /*Size & Position*/
@@ -244,6 +309,11 @@
     left: 4%; 
 }
 
+/* 
+ * Description:
+ *
+ * Status:
+ */
 #sphereCompositionSelector
 {
     /*Size & Position*/
@@ -252,7 +322,11 @@
     left: 4%;
 }
 
-
+/* 
+ * Description:
+ *
+ * Status:
+ */
 #sphereDensityLabel
 {
     /*Size & Position*/
@@ -263,6 +337,11 @@
     left: 4%; 
 }
 
+/* 
+ * Description:
+ *
+ * Status:
+ */
 #sphereDensity
 {
     /*Size & Position*/
@@ -271,6 +350,11 @@
     left: 4%; 
 }
 
+/* 
+ * Description:
+ *
+ * Status:
+ */
 #sphereWaveVelocityLabel
 {
     /*Size & Position*/
@@ -281,6 +365,11 @@
     left: 4%; 
 }
 
+/* 
+ * Description:
+ *
+ * Status:
+ */
 #sphereWaveVelocity
 {
     /*Size & Position*/
@@ -289,6 +378,11 @@
     left: 4%;
 }
 
+/* 
+ * Description:
+ *
+ * Status:
+ */
 #sphereRadiusLabel
 {
     /*Size & Position*/
@@ -297,6 +391,11 @@
     left: 13%; 
 }
 
+/* 
+ * Description:
+ *
+ * Status:
+ */
 #sphereRadius
 {
     /*Size & Position*/
@@ -305,6 +404,11 @@
     left: 13%;
 }
 
+/* 
+ * Description:
+ *
+ * Status:
+ */
 #gFactorLabel
 {
     /*Size & Position*/
@@ -315,6 +419,11 @@
     left: 13%; 
 }
 
+/* 
+ * Description:
+ *
+ * Status:
+ */
 #gFactor
 {
     /*Size & Position*/
@@ -323,6 +432,11 @@
     left: 13%; 
 }
 
+/* 
+ * Description:
+ *
+ * Status:
+ */
 #hFactorLabel
 {
     /*Size & Position*/
@@ -331,6 +445,11 @@
     left: 13%; 
 }
 
+/* 
+ * Description:
+ *
+ * Status:
+ */
 #hFactor
 {
     /*Size & Position*/
@@ -339,6 +458,11 @@
     left: 13%; 
 }
 
+/* 
+ * Description:
+ *
+ * Status:
+ */
 #lowerBoundLabel
 {
     /*Size & Position*/
@@ -348,6 +472,11 @@
     left: 4%;
 }
 
+/* 
+ * Description:
+ *
+ * Status:
+ */
 #lowerBoundInput
 {
     /*Size & Position*/
@@ -356,6 +485,11 @@
     left: 4%;
 }
 
+/* 
+ * Description:
+ *
+ * Status:
+ */
 #upperBoundLabel
 {
     /*Size & Position*/
@@ -364,6 +498,11 @@
     left: 13%;
 }
 
+/* 
+ * Description:
+ *
+ * Status:
+ */
 #upperBoundInput
 {
     /*Size & Position*/
@@ -372,6 +511,11 @@
     left: 13%;
 }
 
+/* 
+ * Description:
+ *
+ * Status:
+ */
 #incrementLabel
 {
     /*Size & Position*/
@@ -380,6 +524,11 @@
     left: 4%;
 }
 
+/* 
+ * Description:
+ *
+ * Status:
+ */
 #incrementInput
 {
     /*Size & Position*/
@@ -389,6 +538,11 @@
     
 }
 
+/* 
+ * Description:
+ *
+ * Status:
+ */
 #plotSolutionButton
 {
     /*Size & Position*/
@@ -399,6 +553,11 @@
     left: 13%;
 }
 
+/* 
+ * Description:
+ *
+ * Status:
+ */
 #downloadSolution
 {
     /*Size & Position*/
@@ -410,6 +569,11 @@
     
 }
 
+/* 
+ * Description:
+ *
+ * Status:
+ */
 #systemLog
 {
     /*Size & Position*/
@@ -421,6 +585,11 @@
     font-size: 1.5em;
 }
 
+/* 
+ * Description:
+ *
+ * Status:
+ */
 #systemLogLabel
 {
     /*Size & Position*/
@@ -431,6 +600,11 @@
     left: 33%;
 }
 
+/* 
+ * Description:
+ *
+ * Status:
+ */
 #title
 {
     /*Size & Position*/
@@ -443,6 +617,11 @@
     font-family: sans-serif;
 }
 
+/* 
+ * Description:
+ *
+ * Status:
+ */
 #toolSelector
 {
     

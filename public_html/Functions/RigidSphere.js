@@ -870,7 +870,7 @@ function writeSolutionFile(lowerBound, upperBound, increment, waterWaveVelocity,
     "Frequency Increment Size: "+increment+"\r\n"+"\r\n";
     
     //This is the data which describes the curve but not the parameters.
-    var solutionData = getRigidSphereSolution(lowerBound, upperBound, increment, waterWaveVelocity, sphereWaveVelocity, sphereDensity, waterDensity, sphereRadius);
+    var solutionData = getRigidSphereSolution(lowerBound, upperBound, increment, waterWaveVelocity, sphereRadius)
     //Run through each element in the solution data to build up the file in a organized format.
     for (var i=0; i<solutionData.length; i++)
     {

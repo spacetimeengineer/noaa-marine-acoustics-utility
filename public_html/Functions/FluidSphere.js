@@ -889,3 +889,70 @@ function writeSolutionFile(lowerBound, upperBound, increment, waterWaveVelocity,
     return solutionFile;
 }
 
+/*
+ * Description: 
+ * 
+ * Example:
+ * 
+ * Status:
+ * Function is not stable.
+ */
+function expandMathBlock()
+{
+    //Makes reference to mathBlock object.
+    var mathBlock = document.getElementById("mathBlock");
+    //If its left attribute is equal to 25%.
+    if (mathBlock.style.left!=="25%")
+    {
+        //Set left attribute to 150%.
+        mathBlock.style.left = "25%";
+    }
+    //If its left attribute is equal to 150%.
+    else if (mathBlock.style.left!=="150%")
+    {
+        //Set left attribute to 25%.
+        mathBlock.style.left = "150%";
+    }
+    else
+    {
+        //mathBlock.style.left = "25%";
+    }
+}
+
+function plotExampleSolution()
+{
+    document.getElementById('lowerBoundInput').value = 0;
+    //
+    document.getElementById('upperBoundInput').value = 200000;
+    //
+    document.getElementById('incrementInput').value = 200;
+    //
+    document.getElementById('waterWaveVelocity').value = 1500.96;
+    //
+    document.getElementById('sphereWaveVelocity').value = 1550;
+    // 
+    document.getElementById('waterDensity').value = 1022.12;
+    //
+    document.getElementById('sphereDensity').value = 1060;
+    //
+    document.getElementById('sphereRadius').value = 0.0225;
+    //
+    var lowerBound = parseFloat(document.getElementById('lowerBoundInput').value);
+    //
+    var upperBound = parseFloat(document.getElementById('upperBoundInput').value);
+    //
+    var increment = parseFloat(document.getElementById('incrementInput').value);
+    //
+    var waterWaveVelocity = (document.getElementById('waterWaveVelocity').value); 
+    //
+    var sphereWaveVelocity = (document.getElementById('sphereWaveVelocity').value);
+    //
+    var waterDensity = (document.getElementById('waterDensity').value);
+    //
+    var sphereDensity = (document.getElementById('sphereDensity').value);
+    //
+    var  sphereRadius = (document.getElementById('sphereRadius').value);
+    //
+    acousticScatteringForAFluidSphereGraph.draw(google.visualization.arrayToDataTable(getFluidSphereSolution(lowerBound, upperBound, increment, waterWaveVelocity, sphereWaveVelocity, sphereDensity, waterDensity, sphereRadius)), acousticScatteringForAFluidSphereOptions);
+
+}
