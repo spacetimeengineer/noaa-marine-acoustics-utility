@@ -32,19 +32,19 @@
             <!-- Write your comments here -->
             <div id="depthLabel" class="label">Water Depth</div>
             <!-- Write your comments here -->
-            <input type="text" class="input" id="temperature" placeholder="(°C)" value = "15" onclick="calculateSeaWaterPropertiesOnClick();" onkeydown="calculateSeaWaterPropertiesOnClick();"><br>
+            <input type="text" class="input" id="temperature" placeholder="(°C)" value = "" onclick="calculateSeaWaterPropertiesOnClick();" onkeydown="calculateSeaWaterPropertiesOnClick();"><br>
             <!-- Write your comments here -->
-            <input type="text" class="input" id="salinity" placeholder="(ppt)" value = "30" onclick="calculateSeaWaterPropertiesOnClick();" onkeydown="calculateSeaWaterPropertiesOnClick();"><br>
+            <input type="text" class="input" id="salinity" placeholder="(ppt)" value = "" onclick="calculateSeaWaterPropertiesOnClick();" onkeydown="calculateSeaWaterPropertiesOnClick();"><br>
             <!-- Write your comments here -->
-            <input type="text" class="input" id="depth" placeholder="(m)" value = "1" onclick="calculateSeaWaterPropertiesOnClick();" onkeydown="calculateSeaWaterPropertiesOnClick();"><br>
+            <input type="text" class="input" id="depth" placeholder="(m)" value = "" onclick="calculateSeaWaterPropertiesOnClick();" onkeydown="calculateSeaWaterPropertiesOnClick();"><br>
             <!-- Write your comments here -->
             <div id="waterDensityLabel" class="label">Water Density</div>
             <!-- Write your comments here -->
-            <input type="text" class="input" id="waterDensity" placeholder="(kg/m^3)" value = "1022.12" onclick="setFactorsOnclick();" onkeydown="setFactorsOnclick();">
+            <input type="text" class="input" id="waterDensity" placeholder="(kg/m^3)" value = "" onclick="setFactorsOnclick();" onkeydown="setFactorsOnclick();">
             <!-- Write your comments here -->
             <div id="waterWaveVelocityLabel" class="label">W Sound Velocity</div>
             <!-- Write your comments here -->
-            <input type="text" class="input" id="waterWaveVelocity" placeholder="(m/s)" value = "1500.96" onclick="setFactorsOnclick();" onkeydown="setFactorsOnclick();">
+            <input type="text" class="input" id="waterWaveVelocity" placeholder="(m/s)" value = "" onclick="setFactorsOnclick();" onkeydown="setFactorsOnclick();">
             <!-- Write your comments here -->
             <div id="sphereDensityLabel" class="label">Sphere Density</div>
             <!-- Write your comments here -->
@@ -56,7 +56,7 @@
             <!-- Write your comments here -->
             <div id="sphereRadiusLabel" class="label">Sphere Radius</div>
             <!-- Write your comments here -->
-            <input type="text" class="input" id="sphereRadius" onclick="setFactorsOnclick();" onkeydown="setFactorsOnclick();" value="0.0225" placeholder="(m)">
+            <input type="text" class="input" id="sphereRadius" onclick="setFactorsOnclick();" onkeydown="setFactorsOnclick();" value="" placeholder="(m)">
             <!-- Write your comments here -->
             <div id="gFactorLabel" class="label">g Factor</div> 
             <!-- Write your comments here -->
@@ -68,15 +68,15 @@
             <!-- Write your comments here -->
             <div id="upperBoundLabel" class="label">Upper Bound</div>
             <!-- Write your comments here -->
-            <input type="text" class="input" id="upperBoundInput" value="200000" placeholder="(kHz)">
+            <input type="text" class="input" id="upperBoundInput" value="" placeholder="(Hz)">
             <!-- Write your comments here -->
             <div id="lowerBoundLabel" class="label">Lower Bound</div>
             <!-- Write your comments here -->
-            <input type="text" class="input" id="lowerBoundInput" value="12000" placeholder="(kHz)">
+            <input type="text" class="input" id="lowerBoundInput" value="" placeholder="(Hz)">
             <!-- Write your comments here -->
             <div id="incrementLabel" class="label">Step Size</div>
             <!-- Write your comments here -->
-            <input type="text" class="input" id="incrementInput" value="200" placeholder="(kHz)">
+            <input type="text" class="input" id="incrementInput" value="" placeholder="(Hz)">
             <!-- Write your comments here -->
             <button type="button" class="input" id="plotSolutionButton" onclick="plotSolutionOnClick();">Plot Solution</button>
             <!-- Write your comments here -->
@@ -89,16 +89,15 @@
         <!-- Write your comments here -->
         <script type="text/JavaScript" src="Functions/RigidSphere.js"></script>
         <!-- Write your comments here -->
-        <div id="acousticScatteringForARigidSphereChartBlock">
-            <!-- Write your comments here -->
-            <div id="acousticScatteringForARigidSphereChart"></div>
+        <button type="button" class="input" id="mathButton" onclick="expandMathBlock();">Mathematics</button>
+        <!-- Write your comments here -->
+        <button type="button" class="input" id="instructionButton" onclick="expandInstructionBlock();">Instructions</button>
+        <!-- Write your comments here -->
+        <button type="button" class="input" id="exampleButton" onclick="plotExampleSolution();">Plot Example</button>
+
+        <!-- Write your comments here -->
+        <div id="acousticScatteringForARigidSphereChart"></div>
             
-            <!-- Write your comments here -->
-            <!--<div id="systemLogLabel">Function Testing Output Log</div>-->
-            <!-- Write your comments here -->
-            <!--<input id="systemLog">-->
-            <!-- Write your comments here -->
-        </div>
         <!-- Write your comments here -->
         <div id="title">Rigid Sphere Back-Scattering Grapher</div>
         <!-- Write your comments here -->
@@ -113,6 +112,12 @@
             <option value="fishBodyScattering">Kirchhoff Ray Mode Solution</option>
         <!-- Write your comments here -->    
         </select>
+        <div id="mathBlock" >
+            <img id="rigidSphereMath" alt="Reflectivity Mathematics" src="Graphics/RigidSphereMath.png">
+        </div>   
+        <div id="instructionBlock" >
+            <img id="rigidSphereInstructions" alt="RigidSphereInstructions" src="Graphics/RigidSphereInstructionsGraphic.png">
+        </div> 
     <!-- Write your comments here -->    
     </body>
 <!-- Write your comments here -->    

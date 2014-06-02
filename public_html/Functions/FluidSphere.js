@@ -410,7 +410,26 @@ function getComplexDivision(numerator, denominator)
         //
         denominator = getComplexProduct(denominator,denominatorConjugate);
         //
-        return [numerator[0]/denominator[0],numerator[1]/denominator[0]];
+        var realPart = numerator[0]/denominator[0];
+        //
+        var imaginaryPart = numerator[1]/denominator[0];
+        //
+        if (isNaN(realPart)===true)
+        {
+            //
+            realPart = 0;
+        }
+        //
+        if (isNaN(imaginaryPart)===true)
+        {
+            //
+            imaginaryPart = 0;
+        }
+    
+        //
+        var division = [realPart,imaginaryPart];
+        //
+        return division;
         
 }
 
@@ -597,7 +616,7 @@ function getFarFieldWaveEquationSolution(acousticFrequency, waterWaveVelocity, s
        //
        var k = 2*Math.PI*acousticFrequency/sphereWaveVelocity;
        //
-       var a = document.getElementById('sphereRadius').value;
+       var a = sphereRadius;
        //
        var R = 2/(k*a);
        //
@@ -620,6 +639,7 @@ function getFarFieldWaveEquationSolution(acousticFrequency, waterWaveVelocity, s
        R=R*Math.pow(Math.pow(summation[0],2)+Math.pow(summation[1],2),0.5);
        //
        return R;
+       
 }
 
 /*

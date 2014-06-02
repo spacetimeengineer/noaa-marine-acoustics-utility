@@ -146,8 +146,9 @@ function getHankelsExpansion(n,k)
  * getSphericalBesselFunctionJ(3,5); 
  * returns 0.22982061816429603
  * Status:
- * Function is stable.
- * Could be checked once more just in case.
+ * Function is not stable.
+ * Known Bugs:
+ * Returning NaN.
  */
 function getSphericalBesselFunctionJ(order, z)
 {
@@ -175,7 +176,11 @@ function getSphericalBesselFunctionJ(order, z)
         sum2 = sum2*Math.cos(z-Math.PI*order*0.5);
         //
         J = sum1+sum2;
-        //    
+        //Testing.... Many not be stable.    
+        if (isNaN(J)===true)
+        {
+            J = Infinity;
+        }
         return J;
 }
 
@@ -272,27 +277,23 @@ function getCSubM(m, acousticFrequency, waterWaveVelocity, sphereWaveVelocity, s
         //
         var a = sphereRadius;
         //
-        var C=  (
-                    (getCoefficientAlpha(m,kPrime*a)/getCoefficientAlpha(m,k*a))*
-                
-                    (getSphericalBesselFunctionY(m,k*a)/getSphericalBesselFunctionJ(m,kPrime*a))-
-                
-                    (getCoefficientBeta(m,k*a)/getCoefficientAlpha(m,k*a))
-                    
-                    *g*h
-                )/
-                
-                (
-                    (getCoefficientAlpha(m,kPrime*a)/getCoefficientAlpha(m,k*a))*
-                    
-                    (getSphericalBesselFunctionJ(m,k*a)/getSphericalBesselFunctionJ(m,kPrime*a))-
-                    
-                    g*h
-                );
+        var C = ((getCoefficientAlpha(m,kPrime*a)/getCoefficientAlpha(m,k*a))*
+                (getSphericalBesselFunctionY(m,k*a)/getSphericalBesselFunctionJ(m,kPrime*a))-
+                (getCoefficientBeta(m,k*a)/getCoefficientAlpha(m,k*a))*g*h)/
+                ((getCoefficientAlpha(m,kPrime*a)/getCoefficientAlpha(m,k*a))*
+                (getSphericalBesselFunctionJ(m,k*a)/getSphericalBesselFunctionJ(m,kPrime*a))-g*h);
         //    
-        systemLogOutput.push([m,parseFloat(C),getCoefficientAlpha(m,k*a), getCoefficientAlpha(m,kPrime*a), getCoefficientBeta(m,k*a)]);
+        //systemLogOutput.push([m,parseFloat(C),getCoefficientAlpha(m,k*a), getCoefficientAlpha(m,kPrime*a), getCoefficientBeta(m,k*a)]);
         //
         return C;
+        
+        //For testing purpoes.
+        //return [C,g,h,k,kPrime,a,getCoefficientAlpha(m,k*a),getCoefficientAlpha(m,kPrime*a),getCoefficientBeta(m,k*a),getSphericalBesselFunctionJ(m,k*a),getSphericalBesselFunctionJ(m,kPrime*a)];
+        //return [m,k,kPrime,a];
+        //
+        //Kwown Bugs
+        //getCoefficientAlpha(m,kPrime*a)
+        //getSphericalBesselFunctionJ(m,kPrime*a)
         
 }
 
@@ -410,7 +411,26 @@ function getComplexDivision(numerator, denominator)
         //
         denominator = getComplexProduct(denominator,denominatorConjugate);
         //
-        return [numerator[0]/denominator[0],numerator[1]/denominator[0]];
+        var realPart = numerator[0]/denominator[0];
+        //
+        var imaginaryPart = numerator[1]/denominator[0];
+        //
+        if (isNaN(realPart)===true)
+        {
+            //
+            realPart = 0;
+        }
+        //
+        if (isNaN(imaginaryPart)===true)
+        {
+            //
+            imaginaryPart = 0;
+        }
+    
+        //
+        var division = [realPart,imaginaryPart];
+        //
+        return division;
         
 }
 
@@ -596,14 +616,17 @@ function getFarFieldWaveEquationSolution(acousticFrequency, waterWaveVelocity, s
 {      
        var k = 2*Math.PI*acousticFrequency/waterWaveVelocity; 
        //
-       var a = sphereRadius;//document.getElementById('sphereRadius').value;
+       var a = sphereRadius;
        //
        var R = 2/(k*a);
        //
-       var summation = [0,0];
+       var summation = getComplexNumber(0,0);
        //
        var largeNumber=20;
        //
+       var nArray = new Array();
+       var dArray = new Array();
+       var sArray = new Array();
        for (var m = 0; m<largeNumber; m++)
        {
             //
@@ -612,11 +635,20 @@ function getFarFieldWaveEquationSolution(acousticFrequency, waterWaveVelocity, s
             var denominator = getComplexNumber(1,getCoefficientBeta(m,k*a)/getCoefficientAlpha(m,k*a));
             //
             summation = getComplexSum(summation,getComplexDivision(numerator,denominator));
-       }
+            
+            nArray.push(numerator);
+            dArray.push(denominator);
+            sArray.push(summation);
+        }
        //
        R=R*Math.pow(Math.pow(summation[0],2)+Math.pow(summation[1],2),0.5);
        //
        return R;
+       
+       //For testing purposes.
+       //var i = 8;
+       //return [nArray[i],dArray[i],sArray[i]];
+       //return getComplexDivision(nArray[i],dArray[i]);
 }
 
 /*
@@ -870,7 +902,7 @@ function writeSolutionFile(lowerBound, upperBound, increment, waterWaveVelocity,
     "Frequency Increment Size: "+increment+"\r\n"+"\r\n";
     
     //This is the data which describes the curve but not the parameters.
-    var solutionData = getRigidSphereSolution(lowerBound, upperBound, increment, waterWaveVelocity, sphereRadius)
+    var solutionData = getRigidSphereSolution(lowerBound, upperBound, increment, waterWaveVelocity, sphereRadius);
     //Run through each element in the solution data to build up the file in a organized format.
     for (var i=0; i<solutionData.length; i++)
     {
@@ -881,3 +913,115 @@ function writeSolutionFile(lowerBound, upperBound, increment, waterWaveVelocity,
     return solutionFile;
 }
 
+/*
+ * Description: 
+ * 
+ * Example:
+ * 
+ * Status:
+ * Function is not stable.
+ */
+function expandMathBlock()
+{
+    //
+    var instructionBlock = document.getElementById("instructionBlock");
+    //
+    if (instructionBlock.style.left!=="150%")
+    {
+        //Set left attribute to 150%.
+        instructionBlock.style.left = "150%";
+    }
+
+    //Makes reference to mathBlock object.
+    var mathBlock = document.getElementById("mathBlock");
+    //If its left attribute is equal to 25%.
+    if (mathBlock.style.left!=="25%")
+    {
+        //Set left attribute to 150%.
+        mathBlock.style.left = "25%";
+    }
+    //If its left attribute is equal to 150%.
+    else if (mathBlock.style.left!=="150%")
+    {
+        //Set left attribute to 25%.
+        mathBlock.style.left = "150%";
+    }
+    else
+    {
+        //mathBlock.style.left = "25%";
+    }
+}
+
+function expandInstructionBlock()
+{
+    //
+    var mathBlock = document.getElementById("mathBlock");
+    //
+    if (mathBlock.style.left!=="150%")
+    {
+        //Set left attribute to 150%.
+        mathBlock.style.left = "150%";
+    }
+    //Makes reference to instructionBlock object.
+    var instructionBlock = document.getElementById("instructionBlock");
+    //If its left attribute is equal to 25%.
+    if (instructionBlock.style.left!=="25%")
+    {
+        //Set left attribute to 150%.
+        instructionBlock.style.left = "25%";
+    }
+    //If its left attribute is equal to 150%.
+    else if (instructionBlock.style.left!=="150%")
+    {
+        //Set left attribute to 25%.
+        instructionBlock.style.left = "150%";
+    }
+    else
+    {
+        //This state should never be reached.
+    }
+}
+
+function plotExampleSolution()
+{
+    document.getElementById('lowerBoundInput').value = 0;
+    //
+    document.getElementById('upperBoundInput').value = 200000;
+    //
+    document.getElementById('incrementInput').value = 200;
+    //
+    document.getElementById('waterWaveVelocity').value = 1500.96;
+    //
+    document.getElementById('sphereWaveVelocity').value = Infinity;
+    // 
+    document.getElementById('waterDensity').value = 1022.12;
+    //
+    document.getElementById('sphereDensity').value = Infinity;
+    //
+    document.getElementById('sphereRadius').value = 0.0225;
+    // 
+    document.getElementById('temperature').value = 15;
+    //
+    document.getElementById('salinity').value = 30;
+    //
+    document.getElementById('depth').value = 1;
+    //
+    var lowerBound = parseFloat(document.getElementById('lowerBoundInput').value);
+    //
+    var upperBound = parseFloat(document.getElementById('upperBoundInput').value);
+    //
+    var increment = parseFloat(document.getElementById('incrementInput').value);
+    //
+    var waterWaveVelocity = (document.getElementById('waterWaveVelocity').value); 
+    //
+    var sphereWaveVelocity = (document.getElementById('sphereWaveVelocity').value);
+    //
+    var waterDensity = (document.getElementById('waterDensity').value);
+    //
+    var sphereDensity = (document.getElementById('sphereDensity').value);
+    //
+    var  sphereRadius = (document.getElementById('sphereRadius').value);
+    //
+    acousticScatteringForARigidSphereGraph.draw(google.visualization.arrayToDataTable(getRigidSphereSolution(lowerBound, upperBound, increment, waterWaveVelocity, sphereRadius)), acousticScatteringForARigidSphereOptions);
+
+}

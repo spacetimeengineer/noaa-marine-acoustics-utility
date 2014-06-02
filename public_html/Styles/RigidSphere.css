@@ -287,10 +287,10 @@
 #acousticScatteringForARigidSphereChart
 {
     /*Size & Position*/
-    position: absolute;
-    bottom: 10%;
-    left: 0%;
-    width: 100%;
+    position: fixed;
+    top: 10%;
+    left: 25%;
+    width: 70%;
     height: 100%;
 }
 
@@ -609,11 +609,11 @@
 {
     /*Size & Position*/
     position: fixed;
-    top: 6%;
+    top: 6.5%;
     left: 22%;
     z-index: 2;
     /*Font*/
-    font-size: 1.6em;
+    font-size: 1.2em;
     font-family: sans-serif;
 }
 
@@ -632,5 +632,127 @@
     top: 6%;
     right: 5%;
     z-index: 2
+}
+
+/* 
+ * Description:
+ *
+ * Status:
+ */
+#mathButton
+{
+    /*Size & Position*/
+    position: fixed;
+    width: 7%;
+    height: 4%;
+    top: 6%;
+    left: 66%;
+    z-index: 3;    
+}
+
+/* 
+ * Description:
+ *
+ * Status:
+ */
+#instructionButton
+{
+    /*Size & Position*/
+    position: fixed;
+    width: 7%;
+    height: 4%;
+    top: 6%;
+    left: 57%;
+    z-index: 3;   
+}
+
+/* 
+ * Description:
+ *
+ * Status:
+ */
+#exampleButton
+{
+    /*Size & Position*/
+    position: fixed;
+    width: 7%;
+    height: 4%;
+    top: 6%;
+    left: 48%;
+    z-index: 3;
+}
+
+/* 
+ * Description:
+ *
+ * Status:
+ */
+#mathBlock
+{
+    /*Size & Position*/
+    position: fixed;
+    width: 73%;
+    height: 79%;
+    left: 150%;
+    top: 18%;
+    z-index: 2;
+    opacity: 0.96;
+    /*Colors & Effects*/
+    background: lightblue;
+    transition: 0.5s;
+    border-bottom-left-radius: 2em;
+    border-bottom-right-radius: 2em;
+    border-top-right-radius: 2em;
+    box-shadow:7px -7px 10px gray;
+}
+
+#rigidSphereMath
+{
+    /*Size & Position*/
+    position: absolute;
+    left: 5%;
+    top: 18%;
+    height: 68%;
+    width: 88%;
+    /*Colors & Effects*/
+}
+
+/* 
+ * Description:
+ *
+ * Status:
+ */
+#instructionBlock
+{
+    /*Size & Position*/
+    position: fixed;
+    width: 73%;
+    height: 79%;
+    left: 150%;
+    top: 18%;
+    z-index: 2;
+    opacity: 0.96;
+    /*Colors & Effects*/
+    background: lightblue;
+    transition: 0.5s;
+    border-bottom-left-radius: 2em;
+    border-bottom-right-radius: 2em;
+    border-top-right-radius: 2em;
+    box-shadow:7px -7px 10px gray;
+}
+
+/* 
+ * Description:
+ *
+ * Status:
+ */
+#rigidSphereInstructions
+{
+    /*Size & Position*/
+    position: absolute;
+    left: 12%;
+    top: 15%;
+    height: 70%;
+    width: 78%;
 }
 
