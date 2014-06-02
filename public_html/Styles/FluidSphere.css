@@ -684,7 +684,7 @@
 {
     /*Size & Position*/
     position: fixed;
-    width: 100%;
+    width: 73%;
     height: 79%;
     left: 150%;
     top: 18%;
@@ -692,8 +692,10 @@
     opacity: 0.96;
     /*Colors & Effects*/
     background: lightblue;
-    transition: 0.8s;
+    transition: 0.5s;
     border-bottom-left-radius: 2em;
+    border-bottom-right-radius: 2em;
+    border-top-right-radius: 2em;
     box-shadow:7px -7px 10px gray;
 }
 
@@ -701,10 +703,10 @@
 {
     /*Size & Position*/
     position: absolute;
-    left: 2%;
+    left: 5%;
     top: 18%;
     height: 68%;
-    width: 70%;
+    width: 88%;
     /*Colors & Effects*/
 }
 
@@ -717,7 +719,7 @@
 {
     /*Size & Position*/
     position: fixed;
-    width: 100%;
+    width: 73%;
     height: 79%;
     left: 150%;
     top: 18%;
@@ -725,8 +727,10 @@
     opacity: 0.96;
     /*Colors & Effects*/
     background: lightblue;
-    transition: 0.8s;
+    transition: 0.5s;
     border-bottom-left-radius: 2em;
+    border-bottom-right-radius: 2em;
+    border-top-right-radius: 2em;
     box-shadow:7px -7px 10px gray;
 }
 
@@ -739,8 +743,8 @@
 {
     /*Size & Position*/
     position: absolute;
-    left: 8%;
+    left: 12%;
     top: 15%;
     height: 70%;
-    width: 60%;
+    width: 78%;
 }
