@@ -455,8 +455,25 @@ function init()
  */
 function downloadSolutionOnClick() 
 {
-    //
-    document.location = 'data:Application/octet-stream,' +encodeURIComponent(writeCSVFile());
+    
+    var lowerBound = document.getElementById('minimum_frequency').value;
+    var upperBound = document.getElementById('maximum_frequency').value; 
+    var increment = document.getElementById('frequency_increment_size').value;
+    var waterWaveVelocity = document.getElementById('cwater').value;
+    var waterDensity = document.getElementById('rhow').value;
+    var gFactor = g; 
+    var hFactor = h;
+    var digitalLength = document.getElementById('digital_fish_length').value;
+    var scaledLength = document.getElementById('scaled_fish_length').value;
+    var angle = document.getElementById('angle').value;
+    var minOrder = document.getElementById('minimum_order').value;
+    var maxOrder = document.getElementById('maximum_order').value;
+    var swimBladderSoundVelocity = document.getElementById('csb').value;
+    var fishBodySoundVelocity = document.getElementById('cfb').value;
+    var swimBladderDensity = document.getElementById('rhosb').value;
+    var FishBodyDensity = document.getElementById('rhofb').value;
+    
+    document.location = 'data:Application/octet-stream,' +encodeURIComponent(writeSolutionFile(lowerBound, upperBound, increment, waterWaveVelocity, waterDensity, gFactor, hFactor, digitalLength, scaledLength, angle, minOrder, maxOrder, swimBladderSoundVelocity, fishBodySoundVelocity, swimBladderDensity, FishBodyDensity));
 }
       
 /*
@@ -467,146 +484,164 @@ function downloadSolutionOnClick()
  * Status:
  * Function is not stable.
  */
-function writeCSVFile()
+function writeSolutionFile(lowerBound, upperBound, increment, waterWaveVelocity, waterDensity, gFactor, hFactor, digitalLength, scaledLength, angle, minOrder, maxOrder, swimBladderSoundVelocity, fishBodySoundVelocity, swimBladderDesnity, fishBodyDensity)
 {
-    //
-    var csvFile;
+    
+    //This makes up the contents of the entire file.
+    var solutionFile = ""; 
+    solutionFile = "Generated from the Kirchhoff Ry Mode Grapher:"+"\r\n"+"\r\n"+
+    "Water Sound Velocity: "+waterWaveVelocity+"\r\n"+
+    "Water Density: "+waterDensity+"\r\n"+
+    "Digital Fish Length: "+digitalLength+"\r\n"+
+    "Scaled Fish Length: "+scaledLength+"\r\n"+
+    "Minimum Order: "+minOrder+"\r\n"+
+    "Maximum Order: "+maxOrder+"\r\n"+
+    "Swim Bladder Sound Velocity: "+swimBladderSoundVelocity+"\r\n"+
+    "Fish Body Sound Velocity: "+fishBodySoundVelocity+"\r\n"+
+    "Swim Bladder Density: "+swimBladderDesnity+"\r\n"+
+    "Fish Body Density: "+fishBodyDensity+"\r\n"+
+    "g Factor: "+gFactor+"\r\n"+
+    "h Factor: "+hFactor+"\r\n"+
+    "Lower Frequency Bound: "+lowerBound+"\r\n"+
+    "Upper Frequency Bound: "+upperBound+"\r\n"+
+    "Frequency Increment Size: "+increment+"\r\n"+"\r\n";
+    
     //
     for (var i=0; i<lateral_data.length; i++)
     {
         //
-        csvFile=csvFile+lateral_data[i]+"\r\n";
+        solutionFile=solutionFile+lateral_data[i]+"\r\n";
     }
     //              
-    csvFile=csvFile+"\r\n";
+    solutionFile=solutionFile+"\r\n";
     //                    
     for (var i=0; i<dorsal_data.length; i++)
     {
         //
-        csvFile=csvFile+dorsal_data[i]+"\r\n";
+        solutionFile=solutionFile+dorsal_data[i]+"\r\n";
     }
     //
-    csvFile=csvFile+"\r\n";
+    solutionFile=solutionFile+"\r\n";
     //                  
     for (var i=0; i<scattering_data.length; i++)
     {
         //
-        csvFile=csvFile+scattering_data[i]+"\r\n";
+        solutionFile=solutionFile+scattering_data[i]+"\r\n";
     }
     //
-    csvFile=csvFile+"\r\n";
+    solutionFile=solutionFile+"\r\n";
     //
     for (var i=0; i<uf_data.length; i++)
     {
         //
-        csvFile=csvFile+uf_data[i]+"\r\n";
+        solutionFile=solutionFile+uf_data[i]+"\r\n";
     }
     //
-    csvFile=csvFile+"\r\n";
+    solutionFile=solutionFile+"\r\n";
     //
     for (var i=0; i<vmf_data.length; i++)
     {
         //
-        csvFile=csvFile+vmf_data[i]+"\r\n";
+        solutionFile=solutionFile+vmf_data[i]+"\r\n";
     }
     //
-    csvFile=csvFile+"\r\n";
+    solutionFile=solutionFile+"\r\n";
     //
     for (var i=0; i<vuf_data.length; i++)
     {
         //
-        csvFile=csvFile+vuf_data[i]+"\r\n";
+        solutionFile=solutionFile+vuf_data[i]+"\r\n";
     }
     //
-    csvFile=csvFile+"\r\n";
+    solutionFile=solutionFile+"\r\n";
     //
     for (var i=0; i<vlf_data.length; i++)
     {
         //
-        csvFile=csvFile+vlf_data[i]+"\r\n";
+        solutionFile=solutionFile+vlf_data[i]+"\r\n";
     }
     //
-    csvFile=csvFile+"\r\n";
+    solutionFile=solutionFile+"\r\n";
     //
     for (var i=0; i<maf_data.length; i++)
     {
         //
-        csvFile=csvFile+maf_data[i]+"\r\n";
+        solutionFile=solutionFile+maf_data[i]+"\r\n";
     }
     //
-    csvFile=csvFile+"\r\n";
+    solutionFile=solutionFile+"\r\n";
     //
     for (var i=0; i<duf_data.length; i++)
     {
         //
-        csvFile=csvFile+duf[i]+"\r\n";
+        solutionFile=solutionFile+duf[i]+"\r\n";
     }
     //
-    csvFile=csvFile+"\r\n";
+    solutionFile=solutionFile+"\r\n";
     //
     for (var i=0; i<blf_data.length; i++)
     {
         //
-        csvFile=csvFile+blf_data[i]+"\r\n";
+        solutionFile=solutionFile+blf_data[i]+"\r\n";
     }
     //
-    csvFile=csvFile+"\r\n";
+    solutionFile=solutionFile+"\r\n";
     //
     for (var i=0; i<dxs_data.length; i++)
     {
         //
-        csvFile=csvFile+dxs_data[i]+"\r\n";
+        solutionFile=solutionFile+dxs_data[i]+"\r\n";
     }
     //
-    csvFile=csvFile+"\r\n";
+    solutionFile=solutionFile+"\r\n";
     //
     for (var i=0; i<dv_data.length; i++)
     {
         //
-        csvFile=csvFile+dv_data[i]+"\r\n";
+        solutionFile=solutionFile+dv_data[i]+"\r\n";
     }
     //
-    csvFile=csvFile+"\r\n";
+    solutionFile=solutionFile+"\r\n";
     //
     for (var i=0; i<u_data.length; i++)
     {
         //
-        csvFile=csvFile+u_data[i]+"\r\n";
+        solutionFile=solutionFile+u_data[i]+"\r\n";
     }
     //
-    csvFile=csvFile+"\r\n";
+    solutionFile=solutionFile+"\r\n";
     //
     for (var i=0; i<vm_data.length; i++)
     {
         //
-        csvFile=csvFile+vm_data[i]+"\r\n";
+        solutionFile=solutionFile+vm_data[i]+"\r\n";
     }
     //
-    csvFile=csvFile+"\r\n";
+    solutionFile=solutionFile+"\r\n";
     //
     for (var i=0; i<vu_data.length; i++)
     {
         //
-        csvFile=csvFile+vu_data[i]+"\r\n";
+        solutionFile=solutionFile+vu_data[i]+"\r\n";
     }
     //
-    csvFile=csvFile+"\r\n";
+    solutionFile=solutionFile+"\r\n";
     //
     for (var i=0; i<ma_data.length; i++)
     {
         //
-        csvFile=csvFile+ma_data[i]+"\r\n";
+        solutionFile=solutionFile+ma_data[i]+"\r\n";
     }
     //
-    csvFile=csvFile+"\r\n";
+    solutionFile=solutionFile+"\r\n";
     //
     for (var i=0; i<du_data.length; i++)
     {
         //
-        csvFile=csvFile+du_data[i]+"\r\n";
+        solutionFile=solutionFile+du_data[i]+"\r\n";
     }
     //
-    return csvFile;
+    return solutionFile;
 }
 
 /*

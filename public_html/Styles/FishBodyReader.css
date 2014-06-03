@@ -29,18 +29,21 @@
 
 #tabSetStyle
 {
-        position: fixed;
-        z-index:1;
-        left: 2%;
-        top: 4%;
-        background: lightblue;
-        right: 2%;
-        height: 8%;
-        border-top-left-radius:2em;
-        border-top-right-radius:2em;
-        border-bottom-right-radius:2em;
-        box-shadow:7px -7px 10px gray;
-        opacity: 0.97;
+    /*Size & Position*/
+    position: fixed;
+    z-index:1;
+    left: 2%;
+    top: 4%;
+    right: 2%;
+    height: 8%;
+    opacity: 0.97;
+    /*Colors & Effects*/
+    background: lightblue;
+    border-top-left-radius:2em;
+    border-top-right-radius:2em;
+    border-bottom-right-radius:2em;
+    box-shadow:7px -7px 10px gray;
+    opacity: 0.97;
 }
 
 
@@ -59,7 +62,7 @@
     left: 2%;
     width: 20%;
     /*Colors & Effects*/
-    background: linear-gradient(lightblue, darkslateblue); /* Standard syntax */
+    background: linear-gradient(lightblue, #9999ff); /* Standard syntax */
     transition: color 1.5s;
     transition: background 1.5s;
     border-bottom-right-radius:2em;
@@ -108,16 +111,16 @@
 #noaaLogoShadow
 { 
     /*Size & Position*/
-   position: fixed;
-   z-index: 1;
-   top: 8%;
-   left: 8.21%;
-   width: 8%;
-   height: 16%;
+    position: fixed;
+    z-index: 1;
+    top: 8%;
+    left: 8.21%;
+    width: 8%;
+    height: 16%;
     /*Colors & Effects*/
-   background: white; 
-   box-shadow: 7px -3px 15px black;
-   border-radius: 100%;
+    background: white; 
+    box-shadow: 7px -3px 15px black;
+    border-radius: 100%;
 }
 
 /* 
@@ -637,5 +640,5 @@
 
 .label
 {
-    font-size: 0.77em;
+    font-size: 0.6em;
 }
